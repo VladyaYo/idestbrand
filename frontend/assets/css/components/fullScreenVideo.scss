@@ -1,0 +1,14 @@
+.fullscreenVideo{
+  width: 100%;
+  //height: auto;
+  max-height: 100vh;
+  position: relative;
+  height:auto;
+  min-height: 100vh;
+  overflow: hidden;
+  video{
+    position: absolute;
+    width: 100%;
+
+  }
+}

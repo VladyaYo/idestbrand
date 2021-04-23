@@ -2,11 +2,13 @@
   "kind": "singleType",
   "collectionName": "homepages",
   "info": {
-    "name": "Homepage"
+    "name": "Homepage",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "seo": {
@@ -19,6 +21,31 @@
       "repeatable": false,
       "component": "sections.hero",
       "required": true
+    },
+    "textBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.text"
+    },
+    "video": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.video"
+    },
+    "singleImage": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.fullscreen-image"
+    },
+    "columnsBlock": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.column"
+    },
+    "numericText": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.numeric-text"
     }
   }
 }

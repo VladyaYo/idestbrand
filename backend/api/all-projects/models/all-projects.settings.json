@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "all_projects",
+  "info": {
+    "name": "allProjects"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "about": {
+      "type": "richtext"
+    }
+  }
+}

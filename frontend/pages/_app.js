@@ -1,6 +1,6 @@
 import App from "next/app";
 import Head from "next/head";
-import "../assets/css/style.css";
+import "../assets/css/style.scss";
 import { createContext } from "react";
 import { getStrapiMedia } from "../lib/media";
 import { fetchAPI } from "../lib/api";
@@ -35,7 +35,7 @@ const MyApp = ({ Component, pageProps }) => {
 };
 
 // getInitialProps disables automatic static optimization for pages that don't
-// have getStaticProps. So article, category and home pages still get SSG.
+// have getStaticProps. So projects, category and home pages still get SSG.
 // Hopefully we can replace this with getStaticProps once this issue is fixed:
 // https://github.com/vercel/next.js/discussions/10949
 MyApp.getInitialProps = async (ctx) => {

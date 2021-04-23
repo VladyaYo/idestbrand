@@ -1,0 +1,85 @@
+.mainPage{
+  .header{
+    background-color: transparent;
+    nav{
+      ul{
+        li{
+          a{
+            color: $white;
+            svg{
+              path{
+                fill: $white;
+              }
+            }
+          }
+        }
+      }
+      .links{
+        li{
+          a{
+            color: $white;
+          }
+        }
+      }
+    }
+    &.sticky{
+      background-color: $white;
+      nav{
+        ul{
+          li{
+            a{
+              color: $black;
+              svg{
+                path{
+                  fill: $black;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    nav{
+      ul{
+        li{
+          a{
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+.header{
+  width: 100%;
+  background-color: $white;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  transition: .4s ease all;
+    nav{
+      width: 100%;
+      @include flex($row,$btwen,$center);
+      padding: 30px 0;
+      ul{
+        svg{
+          path{
+            fill:$black;
+          }
+        }
+        &.links{
+          @include flex($row,$btwen,$center);
+          width: 90%;
+          max-width: 675px;
+          li{
+            a{
+              color: $black;
+              letter-spacing: 0.04em;
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+    }
+
+}

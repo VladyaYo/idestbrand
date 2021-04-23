@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_fullscreen_images",
+  "info": {
+    "name": "fullscreenImage",
+    "icon": "tv"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

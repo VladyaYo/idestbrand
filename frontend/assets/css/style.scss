@@ -1,0 +1,61 @@
+@import "~sass-rem";
+@import "general/reset";
+@import "includes/flex";
+@import "includes/respond";
+@import "general/fonts";
+@import "general/vars";
+
+body{
+  font-family: $noto;
+}
+
+a {
+  font-family: $prompt;
+  font-size: rem(20px);
+  line-height: 120%;
+}
+
+h1 {
+  font-family: $prompt;
+  font-size: rem(44px);
+  font-weight: bold;
+  line-height: 145%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h2{
+  font-family: $prompt;
+  font-size: rem(28px);
+  font-weight: bold;
+  line-height: 143%;
+}
+
+p{
+  font-family: $noto;
+  font-size: rem(22px);
+  line-height: 155%;
+  font-weight: 300;
+}
+
+p.h1{
+  font-family: $prompt;
+  font-size: rem(44px);
+  line-height: 145%;
+}
+
+.container{
+  width: 90%;
+  max-width: 1170px;
+  margin: auto;
+}
+
+@import "components/header";
+@import "components/hero";
+@import "components/textBlock";
+@import "components/fullScreenVideo";
+@import "components/columns";
+@import "components/numericText";
+@import "components/lastProjects";
+@import "components/allProjects";
+@import "components/footer";

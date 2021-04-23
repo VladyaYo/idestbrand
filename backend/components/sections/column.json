@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_columns",
+  "info": {
+    "name": "columns",
+    "icon": "barcode",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "columnItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.column-item"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

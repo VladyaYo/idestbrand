@@ -1,0 +1,14 @@
+$row: row;
+$col: column;
+$center: center;
+$around: space-around;
+$btwen: space-between;
+$start: flex-start;
+$end: flex-end;
+
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-flow: #{$direction} wrap;
+  justify-content: #{$justify};
+  align-items: #{$align};
+}

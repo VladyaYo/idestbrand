@@ -1,0 +1,10 @@
+.projects{
+  width: 100%;
+  .container{
+    @include flex($row,$btwen,$start);
+    a{
+      max-width: 570px;
+      width: 90%;
+    }
+  }
+}
