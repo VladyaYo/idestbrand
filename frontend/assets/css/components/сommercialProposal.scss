@@ -1,0 +1,27 @@
+.commercialProposal.formsLinks{
+  background-color: $black;
+
+  .links{
+    padding: 45px 0;
+    a{
+      color: $white;
+      text-transform: uppercase;
+      margin-right: 110px;
+      position: relative;
+      text-decoration: none;
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        transition: .3s ease all;
+        background-color: $white;
+        height: 1px;
+      }
+        &:hover:before{
+          width: 100%;
+      }
+    }
+  }
+}

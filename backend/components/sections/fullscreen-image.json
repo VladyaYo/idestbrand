@@ -1,8 +1,9 @@
 {
   "collectionName": "components_sections_fullscreen_images",
   "info": {
-    "name": "fullscreenImage",
-    "icon": "tv"
+    "name": "Image Full Screen",
+    "icon": "tv",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -11,11 +12,11 @@
       "via": "related",
       "allowedTypes": [
         "images",
-        "files",
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": true,
+      "pluginOptions": {}
     }
   }
 }

@@ -3,22 +3,29 @@ import Link from "next/link";
 import Image from "./image";
 
 const Card = ({ article, }) => {
+  const firstImgEl = article.contentBlock.find(item => {
+    if(item.image){
+      return item
+    }
+  })
+  const firstTxtEl = article.contentBlock.find(item => {
+    if(item.about){
+      return item
+    }
+  })
+
   return (
     <Link href={`/projects/${article.slug}`}>
-      <a className="uk-link-reset">
-        <div className="uk-card uk-card-muted">
+      <a className="card">
           <div className="top">
-            <Image image={article.image} />
+            {firstImgEl ? <Image image={firstImgEl.image} /> :''}
           </div>
           <div className="cardBody">
             <p className="name">
               {article.projectName}
             </p>
-            <p className="title">
-              {article.text.about.substring(0,140) + '...'}
-            </p>
+              {firstTxtEl ? <p className="title">{firstTxtEl.about.substring(0,120) + '...'}</p> : ''}
           </div>
-        </div>
       </a>
     </Link>
   );

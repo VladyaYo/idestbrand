@@ -1,6 +1,6 @@
-@import "../general/vars.scss";
 .hero{
     background-color: $black;
+    margin: 0 0 40px;
     //min-height: 100vh;
     position: relative;
     top: 0;
@@ -9,6 +9,10 @@
     min-height: 900px;
     max-height: 100vh;
     //overflow-x: hidden;
+    img{
+        position: absolute;
+        height: 100%;
+    }
     video{
         position: absolute;
         left: 0;
@@ -25,10 +29,10 @@
         position: absolute;
         bottom: 0;
         h1{
-            color: $white;
+            color: inherit;
         }
         p{
-            color: $white;
+            color: inherit;
         }
     }
 }

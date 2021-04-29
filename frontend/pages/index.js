@@ -12,9 +12,9 @@ import {getStrapiMedia} from "../lib/media";
 import FullScreenImage from "../components/fullscreenImage";
 import NumericText from "../components/numericText";
 import Footer from "../components/footer";
+import CommercialProposal from "../components/comercialProposal"
 
 const Home = ({ projects, categories, homepage }) => {
-
 
   return (
     <Layout categories={categories} pageClass="mainPage">
@@ -25,31 +25,27 @@ const Home = ({ projects, categories, homepage }) => {
       <Columns columns={homepage.columnsBlock} />
       <FullScreenImage image={homepage.singleImage}/>
       <NumericText rows={homepage.numericText}/>
-      {/*<p>{homepage.columnsBlock}</p>*/}
-      {/*<div className="uk-section">*/}
-      {/*  <div className="uk-container uk-container-large">*/}
       <Articles articles={projects} count={4} />
-
-      {/*  </div>*/}
-      {/*</div>*/}
+      <Text text={homepage.commercial}/>
+      <CommercialProposal links={homepage.commercialLinks}/>
       <Footer/>
     </Layout>
   );
-};
+}
 
 export async function getStaticProps() {
   // Run API calls in parallel
-  const [projects, articles,  homepage] = await Promise.all([
+  const [projects, homepage] = await Promise.all([
       fetchAPI("/projects"),
     // fetchAPI("/articles?status=published"),
     // fetchAPI("/categories"),
-    //   fetchAPI("/projects"),
-      fetchAPI("/articles"),
+    // fetchAPI("/projects"),
+    // fetchAPI("/articles"),
     fetchAPI("/homepage"),
   ]);
 
   return {
-    props: { projects, articles, homepage },
+    props: { projects, homepage },
     revalidate: 1,
   };
 }

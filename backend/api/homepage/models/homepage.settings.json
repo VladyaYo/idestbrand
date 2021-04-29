@@ -46,6 +46,16 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.numeric-text"
+    },
+    "commercial": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.text"
+    },
+    "commercialLinks": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.links"
     }
   }
 }

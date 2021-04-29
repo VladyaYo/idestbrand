@@ -20,10 +20,16 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     },
     "title": {
       "type": "string"
+    },
+    "black": {
+      "type": "boolean",
+      "default": true,
+      "required": true
     }
   }
 }
