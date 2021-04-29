@@ -11,6 +11,8 @@ import FullScreenVideo from "../components/fullScreenVideo";
 import {getStrapiMedia} from "../lib/media";
 import FullScreenImage from "../components/fullscreenImage";
 import NumericText from "../components/numericText";
+import MoreProjects from "../components/moreProjects";
+import Footer from "../components/footer";
 
 const Projects = ({ allProjects, projects, categories, homepage }) => {
 
@@ -36,9 +38,9 @@ const Projects = ({ allProjects, projects, categories, homepage }) => {
             {/*/!*<div className="uk-section">*!/*/}
             {/*/!*  <div className="uk-container uk-container-large">*!/*/}
             {/*<Articles articles={projects} count={4} />*/}
-
               {/*</div>*/}
             {/*/!*</div>*!/*/}
+
         </Layout>
     );
 };

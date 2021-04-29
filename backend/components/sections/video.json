@@ -1,8 +1,9 @@
 {
   "collectionName": "components_sections_videos",
   "info": {
-    "name": "video",
-    "icon": "image"
+    "name": "video Full Screen",
+    "icon": "image",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,7 +16,8 @@
         "videos"
       ],
       "plugin": "upload",
-      "required": false
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }

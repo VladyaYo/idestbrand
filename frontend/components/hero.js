@@ -5,13 +5,17 @@ import {getStrapiMedia} from "../lib/media";
 
 const Hero = ({ hero }) => {
     const videoUrl = getStrapiMedia(hero.video);
+    let textColor =  hero.black ? "black" : "white";
+
     return (
         <section className="hero">
-            <video className='videoTag' autoPlay loop muted>
+            { hero.video.mime.indexOf('video') !== -1 ? <video className='videoTag' autoPlay loop muted>
                 <source src={videoUrl} type='video/mp4' />
-            </video>
+            </video> :
+                <img src={videoUrl} alt={hero.video.alternativeText}/>
+            }
             <div className="container">
-                <div className="text">
+                <div className="text" style={{color:textColor}}>
                     <h1>{hero.heading}</h1>
                     <p className="title">{hero.title}</p>
                 </div>

@@ -36,6 +36,7 @@ p{
   font-size: rem(22px);
   line-height: 155%;
   font-weight: 300;
+
 }
 
 p.h1{
@@ -49,13 +50,26 @@ p.h1{
   max-width: 1170px;
   margin: auto;
 }
+section{
+  max-width: 1920px;
+  margin: auto;
+}
+img{
+  width: 100%;
+}
 
 @import "components/header";
 @import "components/hero";
 @import "components/textBlock";
 @import "components/fullScreenVideo";
+@import "components/fullscreenImage";
+@import "components/containerVideo";
+@import "components/containerImage";
 @import "components/columns";
 @import "components/numericText";
+@import "components/card";
 @import "components/lastProjects";
 @import "components/allProjects";
+@import "components/headerBreadcrumbs";
+@import "components/сommercialProposal";
 @import "components/footer";

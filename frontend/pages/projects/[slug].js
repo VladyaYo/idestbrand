@@ -5,9 +5,15 @@ import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Image from "../../components/image";
 import Seo from "../../components/seo";
+import Text from "../../components/text";
 import { getStrapiMedia } from "../../lib/media";
 import Hero from "../../components/hero";
-// import { Breadcrumbs } from 'nextjs-breadcrumbs'
+import FullScreenVideo from "../../components/fullScreenVideo";
+import FullScreenImage from "../../components/fullscreenImage";
+import ContainerVideo from "../../components/containerVideo"
+import ContainerImage from "../../components/containerImage";
+import Breadcrumbs from "../../components/breadcrumbs";
+import MoreProjects from "../../components/moreProjects";
 
 const Project = ({ project, seo  }) => {
     // const imageUrl = getStrapiMedia(projects.image);
@@ -20,10 +26,33 @@ const Project = ({ project, seo  }) => {
     //     article: true,
     // };
 // console.log(params.slug)
+
+
+    const renderContent = content => {
+        switch (content.__component) {
+            case 'sections.fullscreen-image' :
+                return <FullScreenImage key={`${content.__component} + ${content.id}`} image={content}/>
+            case 'sections.text' :
+                return <Text key={`${content.__component} + ${content.id}`} text={content}/>
+            case 'sections.video' :
+                return <FullScreenVideo key={`${content.__component} + ${content.id}`} video={content}/>
+            case 'sections.video-container' :
+                return <ContainerVideo key={`${content.__component} + ${content.id}`} video={content}/>
+            case 'sections.image' :
+                return <ContainerImage key={`${content.__component} + ${content.id}`} image={content}/>
+            default:
+                return null
+        }
+    }
     return (
-        <Layout >
+        <Layout>
             <Seo seo={seo} />
+            <Breadcrumbs/>
             <Hero hero={project.hero}/>
+            {project.contentBlock.map((content) => renderContent(content))}
+            <MoreProjects article={project} id={project.id}/>
+
+
         </Layout>
     );
 };
@@ -41,13 +70,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-    const projects = await fetchAPI(
+    const project = await fetchAPI(
         `/projects?slug=${params.slug}`
     );
-    const categories = await fetchAPI("/categories");
+
 
     return {
-        props: { projects: projects[0], categories },
+        props: { project: project[0] },
         revalidate: 1,
     };
 }

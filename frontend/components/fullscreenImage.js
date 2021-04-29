@@ -5,7 +5,7 @@ import {getStrapiMedia} from "../lib/media";
 const FullScreenImage = ({image}) => {
     const imageUrl = getStrapiMedia(image.image);
     return (
-        <section className="fullscreenVideo">
+        <section className="fullscreenImage">
             <img src={imageUrl} alt={image.alt}/>
         </section>
     );

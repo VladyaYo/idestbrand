@@ -3,7 +3,7 @@ import Link from "next/link";
 import Logo from "./logo";
 import classnames from "classnames";
 
-const Nav = ({ categories, className, mode }) => {
+const Nav = ({ className, mode }) => {
 
   const [scroll, setScroll] = React.useState(0);
 

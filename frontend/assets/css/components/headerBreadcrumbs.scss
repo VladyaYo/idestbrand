@@ -1,0 +1,15 @@
+.headerBreadcrumbs{
+  ol{
+    @include flex($row,$start,$center);
+    li{
+      a{
+      @extend %p2light;
+      margin-right: 30px;
+      color: $black;
+      &:after{
+        content: "-";
+      }
+    }
+    }
+  }
+}
