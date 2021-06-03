@@ -15,7 +15,7 @@ import ContainerImage from "../../components/containerImage";
 import Breadcrumbs from "../../components/breadcrumbs";
 import MoreProjects from "../../components/moreProjects";
 
-const Project = ({ project, seo  }) => {
+const Project = ({ project, seo, projects  }) => {
     // const imageUrl = getStrapiMedia(projects.image);
     // const example = Breadcrumbs()
 
@@ -45,14 +45,12 @@ const Project = ({ project, seo  }) => {
         }
     }
     return (
-        <Layout>
+        <Layout pageClass="singleProject">
             <Seo seo={seo} />
             <Breadcrumbs/>
             <Hero hero={project.hero}/>
             {project.contentBlock.map((content) => renderContent(content))}
-            <MoreProjects article={project} id={project.id}/>
-
-
+            <MoreProjects articles={projects} current={project}/>
         </Layout>
     );
 };
@@ -69,14 +67,16 @@ export async function getStaticPaths() {
     };
 }
 
+
 export async function getStaticProps({ params }) {
-    const project = await fetchAPI(
-        `/projects?slug=${params.slug}`
+    const [project, projects] = await Promise.all([
+            fetchAPI(`/projects?slug=${params.slug}`),
+            fetchAPI("/projects"),
+        ]
     );
 
-
     return {
-        props: { project: project[0] },
+        props: { project: project[0], projects },
         revalidate: 1,
     };
 }

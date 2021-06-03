@@ -1,0 +1,10 @@
+.moreProjects{
+  padding: 40px 0 160px;
+  .container{
+    @include flex($row,$btwen,$center);
+
+  }
+  .card{
+    max-width: 570px;
+  }
+}

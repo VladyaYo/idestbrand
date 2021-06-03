@@ -28,7 +28,6 @@ const Home = ({ projects, categories, homepage }) => {
       <Articles articles={projects} count={4} />
       <Text text={homepage.commercial}/>
       <CommercialProposal links={homepage.commercialLinks}/>
-      <Footer/>
     </Layout>
   );
 }

@@ -7,7 +7,6 @@ const Layout = ({ children, categories, seo, pageClass }) => (
     <>
         <Nav categories={categories} />
             <main className={pageClass}>
-
                 {children}
             </main>
         <Footer/>
