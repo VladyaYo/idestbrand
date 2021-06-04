@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "all_approaches",
+  "info": {
+    "name": "AllApproach"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mainHeading": {
+      "type": "string"
+    },
+    "mainText": {
+      "type": "richtext"
+    }
+  }
+}

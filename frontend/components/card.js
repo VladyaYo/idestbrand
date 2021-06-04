@@ -2,18 +2,19 @@ import React from "react";
 import Link from "next/link";
 import Image from "./image";
 
-const Card = ({ article, }) => {
-  const firstImgEl = article.contentBlock.find(item => {
-    if(item.image){
-      return item
-    }
-  })
-  const firstTxtEl = article.contentBlock.find(item => {
-    if(item.about){
-      return item
-    }
-  })
 
+const Card = ({ article }) => {
+
+    const firstImgEl = article.contentBlock.find(item => {
+        if(item.image){
+            return item
+        }
+    })
+    const firstTxtEl = article.contentBlock.find(item => {
+        if(item.about){
+            return item
+        }
+    })
   return (
     <Link href={`/projects/${article.slug}`}>
       <a className="card">
@@ -24,7 +25,7 @@ const Card = ({ article, }) => {
             <p className="name">
               {article.projectName}
             </p>
-              {firstTxtEl ? <p className="title">{firstTxtEl.about.substring(0,120) + '...'}</p> : ''}
+              {/*{firstTxtEl.length >=120 ? <p className="title">{firstTxtEl.about.substring(0,120) + '...'}</p> : ''}*/}
           </div>
       </a>
     </Link>

@@ -41,10 +41,39 @@ const Nav = ({ className, mode }) => {
               </ul>
               <ul className="links">
                   <li>
-                      <Link href="/allProjects">
+                      <Link href="/projects">
                           <a>projects</a>
                       </Link>
                   </li>
+                  <li>
+                      <Link href="/approach">
+                          <a>approach</a>
+                      </Link>
+                  </li>
+                  <li>
+                      <Link href="/approach">
+                          <a>vacancies</a>
+                      </Link>
+                  </li>
+                  <li>
+                      <Link href="/approach">
+                          <a>contacts</a>
+                      </Link>
+                  </li>
+                  {/*<li>*/}
+                  {/*    <ul>*/}
+                  {/*        <li>*/}
+                  {/*            <Link href="/approach">*/}
+                  {/*              <a>en</a>*/}
+                  {/*          </Link>*/}
+                  {/*        </li>*/}
+                  {/*        <li>*/}
+                  {/*            <Link href="/approach">*/}
+                  {/*            <a>contacts</a>*/}
+                  {/*        </Link></li>*/}
+                  {/*    </ul>*/}
+                  {/*    */}
+                  {/*</li>*/}
                 {/*{categories.map((category) => {*/}
                 {/*  return (*/}
                 {/*    <li key={category.id}>*/}
