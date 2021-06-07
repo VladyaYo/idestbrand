@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "vacancies",
+  "info": {
+    "name": "Vacancies",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.text"
+    },
+    "CardVacancies": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.card-vacancies"
+    }
+  }
+}

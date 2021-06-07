@@ -51,12 +51,12 @@ const Nav = ({ className, mode }) => {
                       </Link>
                   </li>
                   <li>
-                      <Link href="/approach">
+                      <Link href="/vacancies">
                           <a>vacancies</a>
                       </Link>
                   </li>
                   <li>
-                      <Link href="/approach">
+                      <Link href="/contacts">
                           <a>contacts</a>
                       </Link>
                   </li>

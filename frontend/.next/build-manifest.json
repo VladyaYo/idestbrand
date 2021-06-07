@@ -24,15 +24,10 @@
       "static/chunks/webpack.js",
       "static/chunks/pages/_error.js"
     ],
-    "/approach": [
+    "/vacancies": [
       "static/chunks/main.js",
       "static/chunks/webpack.js",
-      "static/chunks/pages/approach.js"
-    ],
-    "/approach/[slug]": [
-      "static/chunks/main.js",
-      "static/chunks/webpack.js",
-      "static/chunks/pages/approach/[slug].js"
+      "static/chunks/pages/vacancies.js"
     ]
   },
   "ampFirstPages": []

@@ -6,7 +6,6 @@ import Image from "./image";
 const MoreProjects = ({articles, current}) => {
     // const findPrev = articles.findIndex(article, current.id --)
 
-
     return (
         <section className="moreProjects">
             <div className="container">
@@ -17,7 +16,7 @@ const MoreProjects = ({articles, current}) => {
                         }
                     })
                     return(
-                        <Link href={`/projects/${article.slug}`}>
+                        <Link key={article.id} href={`/projects/${article.slug}`}>
                             <a className="card">
                                 <div className="top">
                                     {firstImgEl ? <Image image={firstImgEl.image} /> :''}

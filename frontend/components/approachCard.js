@@ -25,7 +25,7 @@ const ApproachesCard = ({ articles, count }) => {
                         }
                     })
                     return(
-                    <Link href={`/approach/${article.url}`}>
+                    <Link href={`/approach/${article.slug}`}>
                         <a className="card">
                             <div className="top">
                                 {firstImgEl ? <Image image={firstImgEl.image} /> :''}

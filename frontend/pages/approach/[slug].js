@@ -15,17 +15,17 @@ import ContainerImage from "../../components/containerImage";
 import Breadcrumbs from "../../components/breadcrumbs";
 import MoreProjects from "../../components/moreProjects";
 
-const Approach = ({ project, seo, projects  }) => {
-    // const imageUrl = getStrapiMedia(projects.image);
-    // const example = Breadcrumbs()
+const Approach = ({ approach, approaches  }) => {
+    // const imageUrl = getStrapiMedia(approach.image);
+    const example = Breadcrumbs()
 
-    // const seo = {
-    //     metaTitle: project.title,
-    //     metaDescription: project.description,
-    //     shareImage: project.image,
-    //     article: true,
-    // };
-// console.log(params.slug)
+    const seo = {
+        metaTitle: approach.title,
+        metaDescription: approach.description,
+        shareImage: approach.image,
+        article: true,
+    };
+
 
 
     const renderContent = content => {
@@ -46,21 +46,21 @@ const Approach = ({ project, seo, projects  }) => {
     }
     return (
         <Layout pageClass="singleApproach">
-            <Seo seo={seo} />
+            {/*<Seo seo={seo} />*/}
             <Breadcrumbs/>
-            {/*<Hero hero={project.hero}/>*/}
-            {/*{project.contentBlock.map((content) => renderContent(content))}*/}
-            {/*<MoreProjects articles={projects} current={project}/>*/}
+            <Hero hero={approach.Hero}/>
+            {approach.contentBlock.map((content) => renderContent(content))}
+            <MoreProjects articles={approaches} current={approach}/>
         </Layout>
     );
 };
 
 export async function getStaticPaths() {
-    const projects = await fetchAPI("/approaches");
+    const approaches = await fetchAPI("/approaches");
     return {
-        paths: projects.map((project) => ({
+        paths: approaches.map((approach) => ({
             params: {
-                slug: project.slug,
+                slug: approach.slug,
             },
         })),
         fallback: false,

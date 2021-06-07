@@ -5,7 +5,7 @@ import {getStrapiMedia} from "../lib/media";
 
 const Hero = ({ hero }) => {
     const videoUrl = getStrapiMedia(hero.video);
-    let textColor =  hero.black ? "black" : "white";
+    const textColor =  hero.black ? "black" : "white";
 
     return (
         <section className="hero">
