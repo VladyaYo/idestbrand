@@ -50,7 +50,7 @@ const Approach = ({ approach, approaches  }) => {
             <Breadcrumbs/>
             <Hero hero={approach.Hero}/>
             {approach.contentBlock.map((content) => renderContent(content))}
-            <MoreProjects articles={approaches} current={approach}/>
+            <MoreProjects articles={approaches} current={approach.id} link="/approach/"/>
         </Layout>
     );
 };

@@ -2,9 +2,9 @@ import React from "react";
 import MarkdownView from 'react-showdown';
 import { DateTime } from "luxon";
 
-const { DateTime } = require("luxon");
-const VacanciesCard = ({ card }) => {
+const VacanciesCard = ({ card, showModal }) => {
 
+const dateFormating = DateTime.fromISO(card.date).toLocaleString(DateTime.DATE_MED)
     return (
             <div className="cardVacancies">
                 <div className="top">
@@ -14,8 +14,7 @@ const VacanciesCard = ({ card }) => {
                             <p className="location">{card.location}</p>
                             : null
                         }
-
-                        <p className="date">{card.date}</p>
+                        <p className="date">{dateFormating}</p>
                     </div>
                 </div>
                 <div className="cardBody">
@@ -23,7 +22,10 @@ const VacanciesCard = ({ card }) => {
                         <MarkdownView
                             markdown={card.text}/>
                     </div>
-                    <button className="apply">apply</button>
+                    <button className="apply"
+                            onClick={showModal}
+                            // onClick={()=>{showModal}}
+                    >apply</button>
                 </div>
             </div>
     );

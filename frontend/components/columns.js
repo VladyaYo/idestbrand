@@ -12,7 +12,7 @@ const Columns = ({columns}) => {
                      return(
                          <div key={column.id}
                               className="item"
-                              style={{width:'calc(100% /' + columnsLength + ' - 15px)'}}
+                              // style={{width:'calc(100% /' + columnsLength + ' - 15px)'}}
                          >
                            <h2>{column.heading}</h2>
                            <p>{column.textColumn}</p>

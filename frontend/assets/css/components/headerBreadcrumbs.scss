@@ -1,15 +1,27 @@
 .headerBreadcrumbs{
   ol{
     @include flex($row,$start,$center);
+    padding: 8px 0 16px;
     li{
       a{
-      @extend %p2light;
-      margin-right: 30px;
-      color: $black;
+        @extend %p2light;
+        margin-right: 30px;
+        color: $black;
+        text-transform: capitalize;
       &:after{
-        content: "-";
+        content: "—";
+        position: relative;
+        right: -10px;
       }
     }
+      &:last-child{
+        a{
+          @extend %p2bold;
+          &:after{
+            content: none;
+          }
+        }
+      }
     }
   }
 }

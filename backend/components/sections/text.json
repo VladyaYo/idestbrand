@@ -13,6 +13,9 @@
     "about": {
       "type": "richtext",
       "required": true
+    },
+    "link": {
+      "type": "string"
     }
   }
 }

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Logo from "./logo";
 import classnames from "classnames";
 
+
 const Nav = ({ className, mode }) => {
 
   const [scroll, setScroll] = React.useState(0);
@@ -25,6 +26,9 @@ const Nav = ({ className, mode }) => {
       },
       className
   );
+    // const { asPath } = useRouter()
+
+    // const activeClass =
 
   return (
       <header className={classNames}>
@@ -32,7 +36,7 @@ const Nav = ({ className, mode }) => {
           <nav>
               <ul>
                 <li>
-                  <Link href="/">
+                  <Link href="/homepage" >
                     <a>
                       <Logo/>
                     </a>
@@ -41,7 +45,7 @@ const Nav = ({ className, mode }) => {
               </ul>
               <ul className="links">
                   <li>
-                      <Link href="/projects">
+                      <Link href="/projects" className="active">
                           <a>projects</a>
                       </Link>
                   </li>

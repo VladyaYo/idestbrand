@@ -11,15 +11,20 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "antd": "^4.16.2",
+    "axios": "^0.21.1",
+    "formik": "^2.2.9",
     "luxon": "^1.27.0",
     "moment": "^2.24.0",
     "next": "^9.5.4",
+    "next-i18next": "^8.5.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-markdown": "^4.2.2",
     "react-moment": "^0.9.6",
     "react-showdown": "^2.3.0",
-    "showdown": "^1.9.1"
+    "showdown": "^1.9.1",
+    "yup": "^0.32.9"
   },
   "license": "MIT",
   "devDependencies": {

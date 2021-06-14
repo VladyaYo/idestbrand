@@ -12,7 +12,7 @@ const Contacts = ({ contacts, categories, homepage }) => {
     return (
         <Layout pageClass="contactsPage">
             <Seo seo={homepage.seo} />
-            <section>
+            <section className="head">
             <div className="container">
                 <h1>{contacts.mainHeading}</h1>
             </div>
@@ -24,11 +24,11 @@ const Contacts = ({ contacts, categories, homepage }) => {
                         <div className="item">
                             <h2>{item.heading}</h2>
                             <p>{item.about}</p>
+                            <a href={`mailto:${item.link}`} target="_blank">{item.link}</a>
                         </div>
                         )
                     })
                     }
-
                 </div>
             </section>
         </Layout>

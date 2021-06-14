@@ -27,7 +27,7 @@ const Approach = ({ allApproach, projects, categories, approach }) => {
                     </div>
                 </div>
             </section>
-            <ApproachesCard articles={approach} count={4}/>
+            <ApproachesCard articles={approach}/>
         </Layout>
     );
 };

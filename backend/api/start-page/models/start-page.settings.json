@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "start_pages",
+  "info": {
+    "name": "StartPage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "startPageItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.start-page-item",
+      "max": 4,
+      "min": 4
+    }
+  }
+}

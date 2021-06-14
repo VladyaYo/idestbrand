@@ -1,12 +1,19 @@
 @import "~sass-rem";
 @import "general/reset";
+@import '~antd/dist/antd.css';
 @import "includes/flex";
 @import "includes/respond";
 @import "general/fonts";
 @import "general/vars";
 
+html{
+  @include respond-to($tablet-portrait){
+    font-size: 14px;
+  }
+}
 body{
   font-family: $noto;
+
 }
 
 a {
@@ -57,7 +64,42 @@ section{
 img{
   width: 100%;
 }
+.allPostBtn{
+  .container{
+    margin: 0 auto 80px;
+    a{
+      border-bottom: 1px solid $black;
+      font-family: $prompt;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 24px;
+      padding: 10px 5px 10px 30px;
+      position: relative;
+      text-transform: uppercase;
+      color: $black;
+      &:before{
+        content: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.09128 6.5L0 1.44422L1.45436 0L8 6.5L1.45436 13L0 11.5558L5.09128 6.5Z' fill='black'/%3E%3C/svg%3E%0A");
+        position: absolute;
+        left: 3px;
+      }
+    }
+  }
+}
+.footerBlack{
+  background-color: $black;
+  .container{
+    @include flex($row,$start,$center);
+    padding: 48px 0 40px;
+    p{
+      color: $white;
+      @extend %btn;
+      margin-right: 115px;
+    }
+  }
+}
 
+@import "components/startPageLayout";
 @import "components/header";
 @import "components/hero";
 @import "components/footer";
@@ -74,4 +116,7 @@ img{
 @import "components/moreProjects";
 @import "components/headerBreadcrumbs";
 @import "components/сommercialProposal";
-@import "components/vacanciesCards";
+@import "components/vacancies";
+@import "components/modalVacancies";
+@import "components/allApproach";
+@import "components/contacts";

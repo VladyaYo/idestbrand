@@ -16,17 +16,6 @@ import Breadcrumbs from "../../components/breadcrumbs";
 import MoreProjects from "../../components/moreProjects";
 
 const Project = ({ project, seo, projects  }) => {
-    // const imageUrl = getStrapiMedia(projects.image);
-    // const example = Breadcrumbs()
-
-    // const seo = {
-    //     metaTitle: project.title,
-    //     metaDescription: project.description,
-    //     shareImage: project.image,
-    //     article: true,
-    // };
-// console.log(params.slug)
-
 
     const renderContent = content => {
         switch (content.__component) {
@@ -50,10 +39,10 @@ const Project = ({ project, seo, projects  }) => {
             <Breadcrumbs/>
             <Hero hero={project.hero}/>
             {project.contentBlock.map((content) => renderContent(content))}
-            <MoreProjects articles={projects} current={project}/>
+            <MoreProjects articles={projects} current={project.id} />
         </Layout>
     );
-};
+}
 
 export async function getStaticPaths() {
     const projects = await fetchAPI("/projects");
