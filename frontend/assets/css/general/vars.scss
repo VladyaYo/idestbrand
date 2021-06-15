@@ -19,10 +19,41 @@ $dark-gray: #9e9e9e;
   font-size: rem(22px);
   line-height: 155%;
 }
+%p1bold{
+  font-family: $noto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: rem(22px);
+  line-height: 155%;
+}
+%p2bold{
+  font-family: $noto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: rem(18px);
+  line-height: 150%;
+}
 %subtitle{
   font-family: $prompt;
   font-style: normal;
   font-weight: bold;
   font-size: rem(24px);
   line-height: 150%;
+}
+%caption{
+font-family: $noto;
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 16px;
+}
+%btn{
+  font-family: $prompt;
+  font-style: normal;
+  font-weight: 500;
+  font-size: rem(20px);
+  line-height: 120%;
+  text-align: center;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }

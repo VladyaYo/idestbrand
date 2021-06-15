@@ -25,14 +25,14 @@ const ApproachesCard = ({ articles, count }) => {
                         }
                     })
                     return(
-                    <Link href={`/approach/${article.url}`}>
+                    <Link key={article.id} href={`/approach/${article.slug}`}>
                         <a className="card">
                             <div className="top">
                                 {firstImgEl ? <Image image={firstImgEl.image} /> :''}
                             </div>
                             <div className="cardBody">
                                 <p className="name">
-                                    {article.projectName}
+                                    {article.name}
                                 </p>
                                 {/*{firstTxtEl.length >=120 ? <p className="title">{firstTxtEl.about.substring(0,120) + '...'}</p> : ''}*/}
                             </div>

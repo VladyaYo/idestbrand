@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_footers",
+  "info": {
+    "name": "footer",
+    "icon": "long-arrow-alt-down"
+  },
+  "options": {},
+  "attributes": {
+    "contactUs": {
+      "type": "string"
+    },
+    "mail": {
+      "type": "email"
+    }
+  }
+}

@@ -1,5 +1,11 @@
-.mainPage{
-  .header{
+.header{
+  width: 100%;
+  background-color: $white;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  transition: .4s ease all;
+  &.mainPageHeader{
     background-color: transparent;
     nav{
       ul{
@@ -20,6 +26,17 @@
             color: $white;
           }
         }
+        .languagePicker{
+          color: $white;
+          .ant-select-selector{
+            &:after{
+              color: $white;
+            }
+            .ant-select-arrow{
+              color:$white;
+            }
+          }
+        }
       }
     }
     &.sticky{
@@ -32,6 +49,14 @@
               svg{
                 path{
                   fill: $black;
+                }
+              }
+            }
+            .languagePicker{
+              color: $black;
+              .ant-select-selector{
+                &:after{
+                  color: $black;
                 }
               }
             }
@@ -49,18 +74,44 @@
       }
     }
   }
-}
-.header{
-  width: 100%;
-  background-color: $white;
-  z-index: 10;
-  position: sticky;
-  top: 0;
-  transition: .4s ease all;
     nav{
       width: 100%;
       @include flex($row,$btwen,$center);
       padding: 30px 0;
+      position: relative;
+      .mobileBtn {
+        display: none;
+        @include respond-to($phone){
+          display: flex;
+          position: absolute;
+          right: 20px;
+          top: 20px;
+          width: 30px;
+          height: 25px;
+          span{
+            width: 100%;
+            height: 1px;
+            background-color: $black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            &:nth-child(1){
+
+            }
+            &:nth-child(2){
+              top: 50%;
+              left: 0;
+            }
+            &:nth-child(3){
+              top: 100%;
+              left: 0;
+            }
+          }
+        }
+      }
+      @include respond-to($phone){
+        flex-direction: column;
+      }
       ul{
         svg{
           path{
@@ -71,6 +122,19 @@
           @include flex($row,$btwen,$center);
           width: 90%;
           max-width: 675px;
+          @include respond-to($tablet-portrait){
+            max-width: 515px;
+          }
+          @include respond-to($phone){
+            flex-direction: column;
+            margin-top: 30px;
+            //height: 0;
+            position: absolute;
+            top: -100%;
+            li{
+              margin: 10px auto;
+            }
+          }
           li{
             a{
               color: $black;
@@ -78,8 +142,22 @@
               text-transform: uppercase;
             }
           }
+          .languagePicker{
+            font-family: $prompt;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: $black;
+            transition: .2s ease all;
+            .ant-select-selector{
+
+              &:after{
+                color: $black;
+              }
+            }
+          }
         }
       }
     }
-
 }

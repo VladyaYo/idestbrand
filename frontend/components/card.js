@@ -25,7 +25,7 @@ const Card = ({ article }) => {
             <p className="name">
               {article.projectName}
             </p>
-              {/*{firstTxtEl.length >=120 ? <p className="title">{firstTxtEl.about.substring(0,120) + '...'}</p> : ''}*/}
+              {firstTxtEl.about.length >=120 ? <p className="title">{firstTxtEl.about.substring(0,120) + '...'}</p> : <p className="title">{firstTxtEl.about}</p>}
           </div>
       </a>
     </Link>

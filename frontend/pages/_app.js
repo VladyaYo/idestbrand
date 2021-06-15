@@ -15,17 +15,11 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
-        {/*<link*/}
-        {/*  rel="stylesheet"*/}
-        {/*  href="https://fonts.googleapis.com/css?family=Staatliches"*/}
-        {/*/>*/}
-        {/*<link*/}
-        {/*  rel="stylesheet"*/}
-        {/*  href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css"*/}
-        {/*/>*/}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
+          <script async defer crossOrigin="anonymous"
+                  src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v11.0" nonce="h2B8svDW"></script>
+        {/*<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />*/}
+        {/*<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />*/}
+        {/*<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />*/}
       </Head>
       <GlobalContext.Provider value={global}>
         <Component {...pageProps} />
@@ -42,8 +36,10 @@ MyApp.getInitialProps = async (ctx) => {
   // Calls page's `getInitialProps` and fills `appProps.pageProps`
   const appProps = await App.getInitialProps(ctx);
   // Fetch global site settings from Strapi
-  const global = await fetchAPI("/global");
+  const global = await fetchAPI(`/global`);
+  //`/global?_locale=${ctx.router.locale}`
   // Pass the data to our page via props
+
   return { ...appProps, pageProps: { global } };
 };
 

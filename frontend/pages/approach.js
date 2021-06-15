@@ -16,9 +16,14 @@ import Footer from "../components/footer";
 import ApproachesCard from "../components/approachCard";
 
 const Approach = ({ allApproach, projects, categories, approach }) => {
-
+    const seo = {
+        metaTitle: allApproach.mainHeading,
+        metaDescription: allApproach.mainText,
+        article: true,
+    };
     return (
         <Layout categories={categories} pageClass="allApproach">
+            <Seo seo={seo} />
             <section className="head">
                 <div className="container">
                     <div className="text">
@@ -27,17 +32,17 @@ const Approach = ({ allApproach, projects, categories, approach }) => {
                     </div>
                 </div>
             </section>
-            <ApproachesCard articles={approach} count={4}/>
+            <ApproachesCard articles={approach}/>
         </Layout>
     );
 };
 
-export async function getStaticProps() {
+export async function getStaticProps({locale="en"}) {
     // Run API calls in parallel
     const [allApproach, approach] = await Promise.all([
 
-        fetchAPI("/all-approach/"),
-        fetchAPI("/approaches"),
+        fetchAPI(`/all-approach?_locale=${locale}`),
+        fetchAPI(`/approaches?_locale=${locale}`),
         // fetchAPI("/approaches?status=published"),
         // fetchAPI("/categories"),
         // fetchAPI("/homepage"),

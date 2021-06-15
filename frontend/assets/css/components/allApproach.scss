@@ -1,0 +1,26 @@
+.allApproach{
+  .head{
+    .text{
+      max-width: 770px;
+      margin-top: 56px;
+      p{
+        margin-top: 32px;
+      }
+    }
+  }
+  .projects{
+    padding-top: 80px;
+    .container{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(1, 1fr);
+      grid-column-gap: 30px;
+      grid-row-gap: 44px;
+      .card{
+        .top{
+          height: 308px;
+        }
+      }
+    }
+  }
+}

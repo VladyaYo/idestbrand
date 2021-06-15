@@ -9,9 +9,29 @@
     min-height: 900px;
     max-height: 100vh;
     //overflow-x: hidden;
+    @include respond-to($large-desktop){
+        min-height: 771px;
+    }
+    @include respond-to($laptop){
+        min-height: 671px;
+    }
+    @include respond-to($laptop){
+        min-height: 671px;
+    }
+    @include respond-to($interval-back){
+        min-height: 620px;
+    }
+    @include respond-to($tablet-portrait){
+        min-height: 300px;
+
+    }
+
     img{
         position: absolute;
         height: 100%;
+        @include respond-to($tablet-portrait){
+            position: relative
+        }
     }
     video{
         position: absolute;
@@ -19,6 +39,9 @@
         bottom: 0;
         width: 100%;
         z-index: -1;
+        @include respond-to($tablet-portrait){
+           //position: relative;
+        }
 
     }
     .container{
@@ -28,6 +51,9 @@
         padding: 30px 0 180px;
         position: absolute;
         bottom: 0;
+        @include respond-to($tablet-portrait){
+           padding-bottom: 20px;
+        }
         h1{
             color: inherit;
         }

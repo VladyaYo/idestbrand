@@ -16,17 +16,6 @@ import Breadcrumbs from "../../components/breadcrumbs";
 import MoreProjects from "../../components/moreProjects";
 
 const Project = ({ project, seo, projects  }) => {
-    // const imageUrl = getStrapiMedia(projects.image);
-    // const example = Breadcrumbs()
-
-    // const seo = {
-    //     metaTitle: project.title,
-    //     metaDescription: project.description,
-    //     shareImage: project.image,
-    //     article: true,
-    // };
-// console.log(params.slug)
-
 
     const renderContent = content => {
         switch (content.__component) {
@@ -50,34 +39,39 @@ const Project = ({ project, seo, projects  }) => {
             <Breadcrumbs/>
             <Hero hero={project.hero}/>
             {project.contentBlock.map((content) => renderContent(content))}
-            <MoreProjects articles={projects} current={project}/>
+            {projects[1] ? <section className="more">
+                <div className="container">
+                    <h2>More projects</h2>
+                </div>
+            </section> :null
+            }
+            <MoreProjects articles={projects} current={project.id} link="projects" />
         </Layout>
     );
-};
-
-export async function getStaticPaths() {
-    const projects = await fetchAPI("/projects");
-    return {
-        paths: projects.map((project) => ({
-            params: {
-                slug: project.slug,
-            },
-        })),
-        fallback: false,
-    };
 }
 
+// export async function getStaticPaths() {
+//     const projects = await fetchAPI("/projects");
+//     return {
+//         paths: projects.map((project) => ({
+//             params: {
+//                 slug: project.slug,
+//             },
+//         })),
+//         fallback: false,
+//     };
+// }
 
-export async function getStaticProps({ params }) {
+
+export async function getServerSideProps({ params, locale }) {
     const [project, projects] = await Promise.all([
-            fetchAPI(`/projects?slug=${params.slug}`),
-            fetchAPI("/projects"),
+            fetchAPI(`/projects?_locale=${locale}&slug=${params.slug}`),
+            fetchAPI(`/projects?_locale=${locale}`),
         ]
     );
 
     return {
         props: { project: project[0], projects },
-        revalidate: 1,
     };
 }
 
