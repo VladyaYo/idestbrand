@@ -18,7 +18,7 @@ const Projects = ({ allProjects, projects, categories }) => {
     const seo = {
         metaTitle: allProjects.heading,
         metaDescription: allProjects.about,
-        article: true,
+        article: false,
     };
     return (
         <Layout categories={categories} pageClass="allProjects">

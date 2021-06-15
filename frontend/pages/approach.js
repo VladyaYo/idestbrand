@@ -17,8 +17,8 @@ import ApproachesCard from "../components/approachCard";
 
 const Approach = ({ allApproach, projects, categories, approach }) => {
     const seo = {
-        metaTitle: allApproach.heading,
-        metaDescription: allApproach.about,
+        metaTitle: allApproach.mainHeading,
+        metaDescription: allApproach.mainText,
         article: true,
     };
     return (

@@ -39,39 +39,39 @@ const Project = ({ project, seo, projects  }) => {
             <Breadcrumbs/>
             <Hero hero={project.hero}/>
             {project.contentBlock.map((content) => renderContent(content))}
-            <section className="more">
+            {projects[1] ? <section className="more">
                 <div className="container">
                     <h2>More projects</h2>
                 </div>
-            </section>
+            </section> :null
+            }
             <MoreProjects articles={projects} current={project.id} link="projects" />
         </Layout>
     );
 }
 
-export async function getStaticPaths() {
-    const projects = await fetchAPI("/projects");
-    return {
-        paths: projects.map((project) => ({
-            params: {
-                slug: project.slug,
-            },
-        })),
-        fallback: false,
-    };
-}
+// export async function getStaticPaths() {
+//     const projects = await fetchAPI("/projects");
+//     return {
+//         paths: projects.map((project) => ({
+//             params: {
+//                 slug: project.slug,
+//             },
+//         })),
+//         fallback: false,
+//     };
+// }
 
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params, locale }) {
     const [project, projects] = await Promise.all([
-            fetchAPI(`/projects?slug=${params.slug}`),
-            fetchAPI("/projects"),
+            fetchAPI(`/projects?_locale=${locale}&slug=${params.slug}`),
+            fetchAPI(`/projects?_locale=${locale}`),
         ]
     );
 
     return {
         props: { project: project[0], projects },
-        revalidate: 1,
     };
 }
 

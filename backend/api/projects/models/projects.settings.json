@@ -34,11 +34,6 @@
         }
       }
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "projectName",
-      "required": true
-    },
     "contentBlock": {
       "pluginOptions": {
         "i18n": {
@@ -53,6 +48,15 @@
         "sections.image",
         "sections.video-container"
       ]
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }

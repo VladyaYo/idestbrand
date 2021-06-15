@@ -77,29 +77,28 @@ const Approach = ({ approach, approaches  }) => {
     );
 };
 
-export async function getStaticPaths() {
-    const approaches = await fetchAPI("/approaches");
-    return {
-        paths: approaches.map((approach) => ({
-            params: {
-                slug: approach.slug,
-            },
-        })),
-        fallback: false,
-    };
-}
+// export async function getStaticPaths() {
+//     const approaches = await fetchAPI("/approaches");
+//     return {
+//         paths: approaches.map((approach) => ({
+//             params: {
+//                 slug: approach.slug,
+//             },
+//         })),
+//         fallback: false,
+//     };
+// }
 
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps({ params, locale }) {
     const [approach, approaches] = await Promise.all([
-            fetchAPI(`/approaches?slug=${params.slug}`),
-            fetchAPI("/approaches"),
+            fetchAPI(`/approaches?_locale=${locale}&slug=${params.slug}`),
+            fetchAPI(`/approaches?_locale=${locale}`),
         ]
     );
 
     return {
-        props: { approach: approach[0], approaches },
-        revalidate: 1,
+        props: { approach: approach[0], approaches }
     };
 }
 

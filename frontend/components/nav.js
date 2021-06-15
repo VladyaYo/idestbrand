@@ -7,35 +7,39 @@ import {Select} from "antd";
 const { Option } = Select;
 
 const Nav = ({ className, mode }) => {
+    const [scroll, setScroll] = React.useState(0);
+    const [isOpen, setOpen] = React.useState(false);
 
-  const [scroll, setScroll] = React.useState(0);
-
-  const handleScroll = () => {
-    setScroll(window.scrollY);
-  };
+    const handleScroll = () => {
+        setScroll(window.scrollY);
+    };
     const { asPath } = useRouter()
 
-  React.useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    React.useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+        }, []);
 
-  const classNames = classnames(
-      'header',
-      scroll < 10 ? "" : "sticky",
-      {
-        [`header--${mode}`]:Boolean(mode),
+      const classNames = classnames(
+          'header',
+          scroll < 10 ? "" : "sticky",
+          {
+            [`header--${mode}`]:Boolean(mode),
 
-      },
-      className
-  );
-    const router = useRouter();
+          },
+          className
+      );
+        const toggleOpen = isOpen ? true : "open";
 
-    const handleChange = (value) => {
-        router.push(router.asPath, router.asPath, {
-            locale: value
-        })
-    };
+        const handleToggle = () => {
+            setOpen(!isOpen);
+        };
+        const router = useRouter();
+        const handleChange = (value) => {
+            router.push(router.asPath, router.asPath, {
+                locale: value
+            })
+        };
 
   return (
       <header className={classNames}>
@@ -50,9 +54,17 @@ const Nav = ({ className, mode }) => {
                   </Link>
                 </li>
               </ul>
+              <div
+                  className={isOpen ? true : "open"}
+                  onClick={handleToggle}
+              >
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </div>
               <ul className="links">
                   <li>
-                      <Link href="/projects" className="active">
+                      <Link href="/projects" >
                           <a>projects</a>
                       </Link>
                   </li>
