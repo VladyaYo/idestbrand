@@ -15,9 +15,11 @@ const MyApp = ({ Component, pageProps }) => {
     <>
       <Head>
         <link rel="shortcut icon" href={getStrapiMedia(global.favicon)} />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
+          <script async defer crossOrigin="anonymous"
+                  src="https://connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v11.0" nonce="h2B8svDW"></script>
+        {/*<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js" />*/}
+        {/*<script src="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js" />*/}
+        {/*<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />*/}
       </Head>
       <GlobalContext.Provider value={global}>
         <Component {...pageProps} />

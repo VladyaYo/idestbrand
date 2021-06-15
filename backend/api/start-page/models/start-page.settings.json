@@ -10,14 +10,23 @@
     "timestamps": true,
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "startPageItem": {
       "type": "component",
       "repeatable": true,
       "component": "sections.start-page-item",
       "max": 4,
-      "min": 4
+      "min": 4,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

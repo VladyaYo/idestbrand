@@ -39,7 +39,12 @@ const Project = ({ project, seo, projects  }) => {
             <Breadcrumbs/>
             <Hero hero={project.hero}/>
             {project.contentBlock.map((content) => renderContent(content))}
-            <MoreProjects articles={projects} current={project.id} />
+            <section className="more">
+                <div className="container">
+                    <h2>More projects</h2>
+                </div>
+            </section>
+            <MoreProjects articles={projects} current={project.id} link="projects" />
         </Layout>
     );
 }

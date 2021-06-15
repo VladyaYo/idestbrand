@@ -27,6 +27,17 @@
             color: $white;
           }
         }
+        .languagePicker{
+          color: $white;
+          .ant-select-selector{
+            &:after{
+              color: $white;
+            }
+            .ant-select-arrow{
+              color:$white;
+            }
+          }
+        }
       }
     }
     &.sticky{
@@ -39,6 +50,14 @@
               svg{
                 path{
                   fill: $black;
+                }
+              }
+            }
+            .languagePicker{
+              color: $black;
+              .ant-select-selector{
+                &:after{
+                  color: $black;
                 }
               }
             }
@@ -70,11 +89,29 @@
           @include flex($row,$btwen,$center);
           width: 90%;
           max-width: 675px;
+          @include respond-to($tablet-portrait){
+            max-width: 515px;
+          }
           li{
             a{
               color: $black;
               letter-spacing: 0.04em;
               text-transform: uppercase;
+            }
+          }
+          .languagePicker{
+            font-family: $prompt;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: $black;
+            transition: .2s ease all;
+            .ant-select-selector{
+
+              &:after{
+                color: $black;
+              }
             }
           }
         }

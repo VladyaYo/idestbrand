@@ -36,7 +36,7 @@ const MoreProjects = ({articles, current, link}) => {
                         }
                     })
                     return(
-                        <Link key={article.id} href={`${link}${article.slug}`}>
+                        <Link key={article.id} href={`/${link}/${article.slug}`}>
                             <a className="card">
                                 <h2>{article.text}</h2>
                                 {firstImgEl ?

@@ -10,22 +10,41 @@
     "timestamps": true,
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "main": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.text"
+      "component": "sections.text",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "CardVacancies": {
       "type": "component",
       "repeatable": true,
-      "component": "sections.card-vacancies"
+      "component": "sections.card-vacancies",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "footer": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.footer"
+      "component": "sections.footer",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

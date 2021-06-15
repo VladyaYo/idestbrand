@@ -46,11 +46,11 @@ const StartPage = ({ homepage, startPage }) => {
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({locale="en"}) {
   // Run API calls in parallel
   const [homepage, startPage] = await Promise.all([
-      fetchAPI("/homepage"),
-      fetchAPI("/start-page"),
+      fetchAPI(`/homepage?_locale=${locale}`),
+      fetchAPI(`/start-page?_locale=${locale}`),
   ]);
 
   return {

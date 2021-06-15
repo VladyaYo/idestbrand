@@ -51,8 +51,6 @@ export async function getStaticProps({locale = "en"}) {
     const [projects, homepage] = await Promise.all([
         fetchAPI(`/projects?_locale=${locale}`),
         fetchAPI(`/homepage?_locale=${locale}`),
-        // fetchAPI(`/homepage?_locale=${locale}`)
-
     ]);
 
     return {

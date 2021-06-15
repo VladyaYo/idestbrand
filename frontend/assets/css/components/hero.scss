@@ -9,13 +9,23 @@
     min-height: 900px;
     max-height: 100vh;
     //overflow-x: hidden;
+    @include respond-to($large-desktop){
+        min-height: 771px;
+    }
+    @include respond-to($laptop){
+        min-height: 671px;
+    }
+    @include respond-to($laptop){
+        min-height: 671px;
+    }
     @include respond-to($interval-back){
         min-height: 620px;
     }
     @include respond-to($tablet-portrait){
-        min-height: fit-content;
+        min-height: 300px;
 
     }
+
     img{
         position: absolute;
         height: 100%;
@@ -30,7 +40,7 @@
         width: 100%;
         z-index: -1;
         @include respond-to($tablet-portrait){
-           position: relative;
+           //position: relative;
         }
 
     }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactMarkdown from "react-markdown";
 import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
+import { EmailShareButton, FacebookShareButton, } from 'react-share';
 import Layout from "../../components/layout";
 import Image from "../../components/image";
 import Seo from "../../components/seo";
@@ -20,13 +21,12 @@ const Approach = ({ approach, approaches  }) => {
     const example = Breadcrumbs()
 
     const seo = {
-        metaTitle: approach.title,
-        metaDescription: approach.description,
-        shareImage: approach.image,
+        metaTitle: approach.name,
+        metaDescription: approach.Hero.title,
+        shareImage: approach.Hero.video,
         article: true,
     };
-
-
+    // const linkPage = window.location.href
 
     const renderContent = content => {
         switch (content.__component) {
@@ -46,9 +46,31 @@ const Approach = ({ approach, approaches  }) => {
     }
     return (
         <Layout pageClass="singleApproach">
-            {/*<Seo seo={seo} />*/}
+            <Seo seo={seo} />
             <Breadcrumbs/>
             <Hero hero={approach.Hero}/>
+            <section className="share">
+                <div className="container">
+                    <div className="buttons">
+                        <button><EmailShareButton/></button>
+                        <button><FacebookShareButton /></button>
+
+                        {/*<div className="fb-share-button" data-href={linkPage}*/}
+                        {/*     data-layout="button" data-size="large">*/}
+                        {/*    <a target="_blank"*/}
+                        {/*       href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"*/}
+                        {/*       className="fb-xfbml-parse-ignore">*/}
+                        {/*        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">*/}
+                        {/*            <path d="M14 0.666687C6.63602 0.666687 0.666687 6.67236 0.666687 14.0812C0.666687 20.7764 5.54269 26.3259 11.9174 27.3334V17.958H8.53069V14.0812H11.9174V11.126C11.9174 7.76429 13.9067 5.90773 16.9534 5.90773C18.412 5.90773 19.9374 6.16931 19.9374 6.16931V9.46928H18.2574C16.6 9.46928 16.084 10.5035 16.084 11.5646V14.0812H19.7814L19.1907 17.958H16.084V27.3334C22.4574 26.3273 27.3334 20.775 27.3334 14.0812C27.3334 6.67236 21.364 0.666687 14 0.666687Z" fill="black"/>*/}
+                        {/*        </svg>*/}
+                        {/*    </a>*/}
+                        {/*</div>*/}
+                        <a href="">
+
+                        </a>
+                    </div>
+                </div>
+            </section>
             {approach.contentBlock.map((content) => renderContent(content))}
             <MoreProjects articles={approaches} current={approach.id} link="/approach/"/>
         </Layout>

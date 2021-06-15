@@ -10,22 +10,41 @@
     "timestamps": true,
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "Hero": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.hero"
+      "component": "sections.hero",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "contentBlock": {
       "type": "dynamiczone",
       "components": [
         "sections.image",
         "sections.text"
-      ]
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "name": {
-      "type": "string"
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     },
     "slug": {
       "type": "uid"

@@ -2,19 +2,29 @@
   "kind": "collectionType",
   "collectionName": "articles",
   "info": {
-    "name": "Article"
+    "name": "Article",
+    "description": ""
   },
   "options": {
     "increments": true,
     "timestamps": true,
     "draftAndPublish": true
   },
-  "pluginOptions": {},
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
   "attributes": {
     "hero": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.hero"
+      "component": "sections.hero",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
     }
   }
 }

@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import {useRouter} from "next/router";
 import Logo from "./logo";
 import classnames from "classnames";
-
+import {Select} from "antd";
+const { Option } = Select;
 
 const Nav = ({ className, mode }) => {
 
@@ -11,6 +13,7 @@ const Nav = ({ className, mode }) => {
   const handleScroll = () => {
     setScroll(window.scrollY);
   };
+    const { asPath } = useRouter()
 
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -26,9 +29,13 @@ const Nav = ({ className, mode }) => {
       },
       className
   );
-    // const { asPath } = useRouter()
+    const router = useRouter();
 
-    // const activeClass =
+    const handleChange = (value) => {
+        router.push(router.asPath, router.asPath, {
+            locale: value
+        })
+    };
 
   return (
       <header className={classNames}>
@@ -63,6 +70,18 @@ const Nav = ({ className, mode }) => {
                       <Link href="/contacts">
                           <a>contacts</a>
                       </Link>
+                  </li>
+                  <li>
+                      <Select
+                          className="languagePicker"
+                          value={router.locale}
+                          onChange={handleChange}
+                          bordered={false}
+                      >
+                          <Option value="en">EN</Option>
+                          <Option value="ru-RU">RU</Option>
+                          <Option value="uk-UA">UA</Option>
+                      </Select>
                   </li>
                   {/*<li>*/}
                   {/*    <ul>*/}
