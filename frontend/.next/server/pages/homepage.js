@@ -151,7 +151,7 @@ module.exports = require("react-showdown");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId); }
-var __webpack_exports__ = __webpack_require__.X(0, ["vendors-node_modules_next_app_js","vendors-node_modules_next_link_js","pages__app_js","components_articles_js-components_columns_js-components_fullScreenVideo_js-components_fullscr-d39950"], function() { return __webpack_exec__("./pages/homepage.js"); });
+var __webpack_exports__ = __webpack_require__.X(0, ["vendors-node_modules_next_app_js","vendors-node_modules_next_link_js","pages__app_js","components_layout_js-components_seo_js","components_fullScreenVideo_js-components_fullscreenImage_js-components_hero_js-components_ima-7dfdf5","components_articles_js-components_columns_js-components_numericText_js"], function() { return __webpack_exec__("./pages/homepage.js"); });
 module.exports = __webpack_exports__;
 
 })();

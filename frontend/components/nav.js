@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import Logo from "./logo";
@@ -7,8 +7,15 @@ import {Select} from "antd";
 const { Option } = Select;
 
 const Nav = ({ className, mode }) => {
-    const [scroll, setScroll] = React.useState(0);
-    const [isOpen, setOpen] = React.useState(false);
+    const [scroll, setScroll] = useState(0);
+    //brgMenu
+    const [isOpen, setOpen] = useState(false)
+
+    const handleOpenMenu = () => {
+        setOpen(!isOpen)
+        console.log(isOpen);
+    }
+    const openClass = isOpen ? "open" : "";
 
     const handleScroll = () => {
         setScroll(window.scrollY);
@@ -25,15 +32,10 @@ const Nav = ({ className, mode }) => {
           scroll < 10 ? "" : "sticky",
           {
             [`header--${mode}`]:Boolean(mode),
-
           },
           className
       );
-        const toggleOpen = isOpen ? true : "open";
 
-        const handleToggle = () => {
-            setOpen(!isOpen);
-        };
         const router = useRouter();
         const handleChange = (value) => {
             router.push(router.asPath, router.asPath, {
@@ -55,30 +57,30 @@ const Nav = ({ className, mode }) => {
                 </li>
               </ul>
               <div
-                  className={isOpen ? true : "open"}
-                  onClick={handleToggle}
+                  className={"mobileBtn " + openClass}
+                  onClick={handleOpenMenu}
               >
                   <span></span>
                   <span></span>
                   <span></span>
               </div>
-              <ul className="links">
-                  <li>
+              <ul className={"links " + openClass}>
+                  <li className={router.pathname == "/projects" ? "active" : ""}>
                       <Link href="/projects" >
                           <a>projects</a>
                       </Link>
                   </li>
-                  <li>
+                  <li className={router.pathname == "/approach" ? "active" : ""}>
                       <Link href="/approach">
                           <a>approach</a>
                       </Link>
                   </li>
-                  <li>
+                  <li className={router.pathname == "/vacancies" ? "active" : ""}>
                       <Link href="/vacancies">
                           <a>vacancies</a>
                       </Link>
                   </li>
-                  <li>
+                  <li className={router.pathname == "/contacts" ? "active" : ""}>
                       <Link href="/contacts">
                           <a>contacts</a>
                       </Link>

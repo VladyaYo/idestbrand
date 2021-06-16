@@ -25,6 +25,10 @@
         min-height: 300px;
 
     }
+    @include respond-to($phone){
+        min-height: 120px;
+
+    }
 
     img{
         position: absolute;
