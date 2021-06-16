@@ -25,6 +25,11 @@ footer.footer{
     .links{
       li{
         margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        svg{
+          margin-right: 10px;
+        }
       }
     }
   }

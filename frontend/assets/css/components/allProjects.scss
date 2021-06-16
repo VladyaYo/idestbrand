@@ -3,6 +3,9 @@
     .text{
       max-width: 770px;
       margin: 60px 0 0;
+      @include respond-to($phone){
+        margin: 20px 0 0;
+      }
     }
     h1{
       text-transform: uppercase;
@@ -10,6 +13,9 @@
   }
   .projects{
     margin: 0 0 130px;
+    @include respond-to($phone){
+      margin: 0 0 30px;
+    }
     .container{
       display: grid;
       grid-template-columns: repeat(6, 1fr);

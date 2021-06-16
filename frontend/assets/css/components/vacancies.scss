@@ -4,8 +4,14 @@
       .text{
         max-width: 770px;
         margin-bottom: 80px;
+        @include respond-to($phone){
+          margin-bottom: 30px;
+        }
         h1{
           margin: 56px 0 32px;
+          @include respond-to($phone){
+            margin: 16px 0 7px;
+          }
         }
         p{
           @extend %p1light;
@@ -15,6 +21,9 @@
   }
   .vacanciesCards{
     margin: 50px auto 80px;
+    @include respond-to($phone){
+      margin: 20px auto 40px;
+    }
     .container{
       //@include flex($row,$btwen,$start);
       display: grid;
@@ -22,6 +31,10 @@
       grid-template-rows: 1fr;
       grid-column-gap: 30px;
       grid-row-gap: 30px;
+      @include respond-to($phone){
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 15px;
+      }
     }
     .cardVacancies{
       border: 1px solid $black;

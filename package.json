@@ -15,6 +15,7 @@
     "classnames": "^2.3.1",
     "nextjs-breadcrumbs": "^0.9.9",
     "node-sass": "4.14.1",
+    "react-burger-menu": "^3.0.6",
     "sass-rem": "^2.0.1"
   }
 }
