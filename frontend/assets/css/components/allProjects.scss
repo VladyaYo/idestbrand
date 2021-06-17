@@ -22,6 +22,7 @@
       grid-template-rows: repeat(1, 1fr);
       grid-column-gap: 30px;
       grid-row-gap: 40px;
+
       @include respond-to($phone){
         grid-template-columns: repeat(1, 1fr);
         .card{
@@ -41,11 +42,17 @@
         grid-column: span 2;
         .top{
           height: 274px;
+          @include respond-to($tablet-portrait){
+            height: 160px;
+              }
         }
         &:nth-child(2), &:nth-child(1){
           grid-column: span 3;
           .top{
             height: 380px;
+            @include respond-to($tablet-portrait){
+              height: 200px;
+            }
           }
         }
         &:nth-child(9), &:nth-child(19){

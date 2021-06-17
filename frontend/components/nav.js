@@ -97,29 +97,6 @@ const Nav = ({ className, mode }) => {
                           <Option value="uk-UA">UA</Option>
                       </Select>
                   </li>
-                  {/*<li>*/}
-                  {/*    <ul>*/}
-                  {/*        <li>*/}
-                  {/*            <Link href="/approach">*/}
-                  {/*              <a>en</a>*/}
-                  {/*          </Link>*/}
-                  {/*        </li>*/}
-                  {/*        <li>*/}
-                  {/*            <Link href="/approach">*/}
-                  {/*            <a>contacts</a>*/}
-                  {/*        </Link></li>*/}
-                  {/*    </ul>*/}
-                  {/*    */}
-                  {/*</li>*/}
-                {/*{categories.map((category) => {*/}
-                {/*  return (*/}
-                {/*    <li key={category.id}>*/}
-                {/*      <Link as={`/category/${category.slug}`} href="/category/[id]">*/}
-                {/*        <a>{category.name}</a>*/}
-                {/*      </Link>*/}
-                {/*    </li>*/}
-                {/*  );*/}
-                {/*})}*/}
               </ul>
           </nav>
         </div>

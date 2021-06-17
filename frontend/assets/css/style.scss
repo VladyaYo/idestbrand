@@ -95,10 +95,15 @@ img{
       color: $white;
       @extend %btn;
       margin-right: 115px;
+      @include respond-to($tablet-portrait){
+        margin-right: 100px;
+      }
     }
   }
 }
-
+.ant-select-single .ant-select-selector .ant-select-selection-item, .ant-select-single .ant-select-selector .ant-select-selection-placeholder{
+  transition: none;
+}
 @import "components/startPageLayout";
 @import "components/header";
 @import "components/hero";
