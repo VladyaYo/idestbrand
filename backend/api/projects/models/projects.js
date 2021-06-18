@@ -8,12 +8,12 @@ module.exports = {
    */
   lifecycles: {
     async beforeCreate(data) {
-      if (data.name) {
+      if (data.projectName) {
         data.slug = slugify(data.projectName, {lower: true});
       }
     },
     async beforeUpdate(params, data) {
-      if (data.name) {
+      if (data.projectName) {
         data.slug = slugify(data.projectName, {lower: true});
       }
     },
