@@ -2,7 +2,6 @@ import React from "react";
 
 
 const Columns = ({columns}) => {
-    const columnsLength = columns.columnItem.length
     return (
         <section className="columnsText">
          <div className="container">
@@ -10,9 +9,8 @@ const Columns = ({columns}) => {
              <div className="columns">
                  {columns.columnItem.map((column) => {
                      return(
-                         <div key={column.id}
+                         <div key={column.heading + column.id}
                               className="item"
-                              // style={{width:'calc(100% /' + columnsLength + ' - 15px)'}}
                          >
                            <h2>{column.heading}</h2>
                            <p>{column.textColumn}</p>

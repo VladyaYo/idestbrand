@@ -4,7 +4,11 @@ import {useRouter} from "next/router";
 import Logo from "./logo";
 import classnames from "classnames";
 import {Select} from "antd";
+import en from "../public/locales/en";
+import ru from "../public/locales/ru";
+import ua from "../public/locales/ua";
 const { Option } = Select;
+
 
 const Nav = ({ className, mode }) => {
     const [scroll, setScroll] = useState(0);
@@ -35,12 +39,24 @@ const Nav = ({ className, mode }) => {
           },
           className
       );
-
         const router = useRouter();
         const handleChange = (value) => {
             router.push(router.asPath, router.asPath, {
                 locale: value
             })
+        };
+
+        const {locale} = router;
+        let t ;
+        switch (locale) {
+            case "ru-RU":
+                t = ru;
+                break;
+            case "uk-UA":
+                t = ua;
+                break;
+            default:
+                t =  en;
         };
 
   return (
@@ -67,22 +83,22 @@ const Nav = ({ className, mode }) => {
               <ul className={"links " + openClass}>
                   <li className={router.pathname == "/projects" ? "active" : ""}>
                       <Link href="/projects" >
-                          <a>projects</a>
+                          <a>{t.projects}</a>
                       </Link>
                   </li>
                   <li className={router.pathname == "/approach" ? "active" : ""}>
                       <Link href="/approach">
-                          <a>approach</a>
+                          <a>{t.approach}</a>
                       </Link>
                   </li>
                   <li className={router.pathname == "/vacancies" ? "active" : ""}>
                       <Link href="/vacancies">
-                          <a>vacancies</a>
+                          <a>{t.vacancies}</a>
                       </Link>
                   </li>
                   <li className={router.pathname == "/contacts" ? "active" : ""}>
                       <Link href="/contacts">
-                          <a>contacts</a>
+                          <a>{t.contacts}</a>
                       </Link>
                   </li>
                   <li>
@@ -92,9 +108,9 @@ const Nav = ({ className, mode }) => {
                           onChange={handleChange}
                           bordered={false}
                       >
-                          <Option value="en">EN</Option>
-                          <Option value="ru-RU">RU</Option>
-                          <Option value="uk-UA">UA</Option>
+                          <Option value="en">{t.EN}</Option>
+                          <Option value="ru-RU">{t.RU}</Option>
+                          <Option value="uk-UA">{t.UA}</Option>
                       </Select>
                   </li>
               </ul>

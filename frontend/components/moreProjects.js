@@ -5,7 +5,6 @@ import Image from "./image";
 
 const MoreProjects = ({articles, current, link}) => {
 
-    // const findPrev = articles.find( current);
     const currentArticleIndex = articles.findIndex(article => article.id === current);
 
     let prevArticle;
@@ -20,11 +19,6 @@ const MoreProjects = ({articles, current, link}) => {
         nextArticle = {...articles[currentArticleIndex + 1], text: "Next"};
         morePosts.push(nextArticle)
     }
-    // const moreProjectArray = articles.filter(article => {
-    //     if( article.id === current - 1 || article.id === current + 1) {
-    //         return article
-    //     }
-    // });
 
     return (
         <section className="moreProjects">

@@ -9,9 +9,11 @@ const Hero = ({ hero }) => {
 
     return (
         <section className="hero">
-            { hero.video.mime.indexOf('video') !== -1 ? <video className='videoTag' autoPlay loop muted>
-                <source src={videoUrl} type='video/mp4' />
-            </video> :
+            { hero.video.mime.indexOf('video') !== -1 ?
+                <video className='videoTag' autoPlay loop muted>
+                    <source src={videoUrl} type='video/mp4' />
+                </video>
+                :
                 <img src={videoUrl} alt={hero.video.alternativeText}/>
             }
             <div className="container">
