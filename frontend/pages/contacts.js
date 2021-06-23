@@ -1,14 +1,9 @@
 import React from "react";
-import classnames from "classnames"
-import Text from "../components/text";
-import Articles from "../components/articles";
-import Columns from "../components/columns";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
 
-const Contacts = ({ contacts, categories, homepage }) => {
-
+const Contacts = ({ contacts, homepage }) => {
     return (
         <Layout pageClass="contactsPage">
             <Seo seo={homepage.seo} />
@@ -21,7 +16,7 @@ const Contacts = ({ contacts, categories, homepage }) => {
                 <div className="container">
                     { contacts.contact.map((item)=>{
                         return(
-                        <div className="item">
+                        <div key={item.heading + item.id} className="item">
                             <h2>{item.heading}</h2>
                             <p>{item.about}</p>
                             <a href={`mailto:${item.link}`} target="_blank">{item.link}</a>
@@ -36,13 +31,8 @@ const Contacts = ({ contacts, categories, homepage }) => {
 }
 
 export async function getStaticProps() {
-    // Run API calls in parallel
     const [contacts, homepage] = await Promise.all([
         fetchAPI("/contacts"),
-        // fetchAPI("/articles?status=published"),
-        // fetchAPI("/categories"),
-        // fetchAPI("/projects"),
-        // fetchAPI("/articles"),
         fetchAPI("/homepage"),
     ]);
 

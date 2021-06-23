@@ -1,10 +1,29 @@
 import React from "react";
 import MarkdownView from 'react-showdown';
 import { DateTime } from "luxon";
+import {useRouter} from "next/router";
+import ru from "../public/locales/ru";
+import ua from "../public/locales/ua";
+import en from "../public/locales/en";
 
 const VacanciesCard = ({ card, showModal }) => {
 
-const dateFormating = DateTime.fromISO(card.date).toLocaleString(DateTime.DATE_MED)
+    const router = useRouter();
+    const {locale} = router;
+    let t ;
+    switch (locale) {
+        case "ru-RU":
+            t = ru;
+            break;
+        case "uk-UA":
+            t = ua;
+            break;
+        default:
+            t =  en;
+    };
+
+    const dateFormating = DateTime.fromISO(card.date).toLocaleString(DateTime.DATE_MED)
+
     return (
             <div className="cardVacancies">
                 <div className="top">
@@ -24,8 +43,7 @@ const dateFormating = DateTime.fromISO(card.date).toLocaleString(DateTime.DATE_M
                     </div>
                     <button className="apply"
                             onClick={showModal}
-                            // onClick={()=>{showModal}}
-                    >apply</button>
+                    >{t.apply}</button>
                 </div>
             </div>
     );

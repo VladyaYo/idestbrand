@@ -5,6 +5,8 @@
       padding: 20px 0;
       text-transform: uppercase;
       color: $black;
+      font-weight: bold;
+      letter-spacing: 0.08em;
     }
     .columns{
       @include flex($row,$btwen,baseline);

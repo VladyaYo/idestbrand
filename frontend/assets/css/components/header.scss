@@ -41,11 +41,19 @@
             }
           }
           span{
-            color: $black;
+            color: $white;
           }
         }
         .languagePicker{
           color: $white;
+          span{
+            svg{
+              path{
+              fill: white;
+              }
+            }
+          }
+
           .ant-select-selector{
             &:after{
               color: $white;
@@ -60,6 +68,9 @@
     &.sticky{
       background-color: $white;
       nav{
+       .links li span{
+         color: $black;
+       }
         ul{
           li{
             a{
@@ -72,6 +83,13 @@
             }
             .languagePicker{
               color: $black;
+              span{
+                svg{
+                  path{
+                    fill: $black;
+                  }
+                }
+              }
               .ant-select-selector{
                 &:after{
                   color: $black;
@@ -216,4 +234,11 @@
         }
       }
     }
+}
+.ant-select-item-option-selected:not(.ant-select-item-option-disabled){
+  background-color: #9e9e9e;
+}
+.ant-select-item-option-content{
+  @extend %p2light;
+
 }

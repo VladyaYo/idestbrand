@@ -36,12 +36,6 @@ const Home = ({ projects, categories, homepage }) => {
             </section>
             <Text text={homepage.commercial}/>
             <CommercialProposal links={homepage.commercialLinks}/>
-            <section className="footerBlack">
-                <div className="container">
-                    <p>new brand / rebranding</p>
-                    <p>advertising campaign</p>
-                </div>
-            </section>
         </Layout>
     );
 }

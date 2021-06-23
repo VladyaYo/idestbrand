@@ -45,9 +45,6 @@
       max-width: 370px;
       min-height: 360px;
       margin-bottom: 20px;
-      @include respond-to($tablet-portrait){
-
-      }
       @include respond-to($phone){
         max-width: 100%;
         min-height: auto;
@@ -72,6 +69,10 @@
       }
       .text{
         margin: 20px 0;
+        min-height: 236px;
+        @include respond-to($tablet-portrait){
+          min-height: 50px;
+        }
         p{
           font-family: $noto;
           font-style: normal;
