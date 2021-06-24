@@ -7,7 +7,7 @@ const ContainerVideo = ({video}) => {
     return (
         <section className="containerVideo">
             <div className="container">
-                <video className='videoTag' autoPlay loop muted>
+                <video className='videoTag' preload autoPlay playsinline loop muted>
                     <source src={videoUrl} type='video/mp4' />
                 </video>
             </div>

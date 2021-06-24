@@ -1,10 +1,9 @@
 import React, {useState} from "react";
-import classnames from "classnames"
+import axios from "axios";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import {fetchAPI} from "../lib/api";
 import VacanciesCard from "../components/vacanciesCards";
-import ModalVacancies from "../components/Modal/modalVacancies";
 import {Form, Input, Modal, Button, Upload} from "antd";
 import ContactUsFooter from "../components/contactUsFooter";
 import {useRouter} from "next/router";
@@ -15,6 +14,17 @@ import en from "../public/locales/en";
 
 
 const Vacancies = ({ vacancies, homepage}) => {
+
+    const normFile = (e) => {
+        console.log('Upload event:', e);
+
+        if (Array.isArray(e)) {
+            return e;
+        }
+
+        return e && e.fileList;
+    };
+
     const router = useRouter();
     const {locale} = router;
     let t ;
@@ -26,7 +36,7 @@ const Vacancies = ({ vacancies, homepage}) => {
             t = ua;
             break;
         default:
-            t =  en;
+            t = en;
     };
 
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -43,16 +53,11 @@ const Vacancies = ({ vacancies, homepage}) => {
         setIsModalVisible(false);
     };
 
-    const onFinish = (values) => {
-        console.log('Success:', values);
-        setIsModalVisible(false);
-    };
-
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
     const submitHandler = async (values) => {
-        console.log(values.file.fileList[0])
+        // console.log(values.file.fileList[0])
         try {
             await fetchAPI('/vacancies-messages', {
                 method: 'POST',
@@ -65,22 +70,23 @@ const Vacancies = ({ vacancies, homepage}) => {
                     email: values.email,
                     link: values.link,
                     message:values.message,
-                    cv: values.file.fileList[0],
+                    cv: values.upload,
                 }),
             })
             await fetchAPI('/upload', {
                 method: 'POST',
-                // headers: {
-                //     "Content-Type": "multipart/form-data; boundary=—-WebKitFormBoundaryfgtsKTYLsT7PNUVD"
-                // },
-                body: values.file.fileList[0],
+                headers: {
+                    "Content-Type": "multipart/form-data; boundary=—-WebKitFormBoundaryfgtsKTYLsT7PNUVD"
+                },
+                // body: values.file.fileList[0],
+                body: values.file.name,
             })
-            console.log(values.file.fileList[0])
         } catch (err) {
             console.log(err)
         }
         setIsModalVisible(false);
     }
+
     return (
         <Layout pageClass="vacancies">
             <Seo seo={homepage.seo} />
@@ -148,8 +154,9 @@ const Vacancies = ({ vacancies, homepage}) => {
                     <Form.Item name="message">
                         <Input.TextArea placeholder={t.YourMessage}/>
                     </Form.Item>
-                    <Form.Item name="file">
-                        <Upload listType="fileList">
+                    <Form.Item name="file"
+                               valuePropName="fileList">
+                        <Upload maxCount={1}>
                             <Button className="uploadBtn">
                                 <span>
                                     <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -158,6 +165,17 @@ const Vacancies = ({ vacancies, homepage}) => {
                                 </span>
                                 {t.AttacheYouCv}
                             </Button>
+                        </Upload>
+                    </Form.Item>
+                    <Form.Item
+                        name="upload"
+                        label="Upload"
+                        valuePropName="fileList"
+                        getValueFromEvent={normFile}
+                        extra="longgggggggggggggggggggggggggggggggggg"
+                    >
+                        <Upload name="logo"  listType="picture">
+                            <Button>Click to upload</Button>
                         </Upload>
                     </Form.Item>
                     <Form.Item >
@@ -176,7 +194,6 @@ export async function getStaticProps() {
     const [vacancies, homepage] = await Promise.all([
         fetchAPI("/vacancies"),
         fetchAPI("/homepage"),
-        // fetchAPI("vacancies-message")
     ]);
 
     return {
@@ -184,6 +201,5 @@ export async function getStaticProps() {
         revalidate: 1,
     };
 }
-
 
 export default Vacancies;

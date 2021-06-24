@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
-import ReactMarkdown from "react-markdown";
-import Moment from "react-moment";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
-import Image from "../../components/image";
 import Seo from "../../components/seo";
 import Text from "../../components/text";
-import { getStrapiMedia } from "../../lib/media";
 import Hero from "../../components/hero";
 import FullScreenVideo from "../../components/fullScreenVideo";
 import FullScreenImage from "../../components/fullscreenImage";

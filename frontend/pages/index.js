@@ -17,7 +17,6 @@ import Link from "next/link";
 import Image from "../components/image";
 
 const StartPage = ({ homepage, startPage }) => {
-
   return (
       <>
           <Seo seo={homepage.seo} />
