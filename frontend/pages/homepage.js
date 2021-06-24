@@ -1,5 +1,4 @@
 import React from "react";
-import classnames from "classnames"
 import Text from "../components/text";
 import Articles from "../components/articles";
 import Columns from "../components/columns";
@@ -8,10 +7,8 @@ import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
 import Hero from "../components/hero";
 import FullScreenVideo from "../components/fullScreenVideo";
-import {getStrapiMedia} from "../lib/media";
 import FullScreenImage from "../components/fullscreenImage";
 import NumericText from "../components/numericText";
-import Footer from "../components/footer";
 import CommercialProposal from "../components/comercialProposal"
 import Link from "next/link";
 

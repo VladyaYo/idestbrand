@@ -32,19 +32,6 @@ const Projects = ({ allProjects, projects, categories }) => {
                 </div>
             </section>
             <Articles articles={projects} />
-            {/*<Seo seo={homepage.seo} />*/}
-            {/*<Hero hero={allProjects.hero}/>*/}
-            {/*<Text text={homepage.textBlock}/>*/}
-            {/*<FullScreenVideo video={homepage.video}/>*/}
-            {/*<Columns columns={homepage.columnsBlock} />*/}
-            {/*<FullScreenImage image={homepage.singleImage}/>*/}
-            {/*<NumericText rows={homepage.numericText}/>*/}
-            {/*/!*<p>{homepage.columnsBlock}</p>*!/*/}
-            {/*/!*<div className="uk-section">*!/*/}
-            {/*/!*  <div className="uk-container uk-container-large">*!/*/}
-            {/*<Articles articles={projects} count={4} />*/}
-              {/*</div>*/}
-            {/*/!*</div>*!/*/}
         </Layout>
     );
 };
@@ -54,9 +41,6 @@ export async function getStaticProps({locale="en"}) {
     const [projects, allProjects] = await Promise.all([
         fetchAPI(`/projects?_locale=${locale}`),
         fetchAPI(`/all-projects?_locale=${locale}`),
-        // fetchAPI("/articles?status=published"),
-        // fetchAPI("/categories"),
-        // fetchAPI("/homepage"),
     ]);
 
     return {

@@ -10,7 +10,7 @@ const Hero = ({ hero }) => {
     return (
         <section className="hero">
             { hero.video.mime.indexOf('video') !== -1 ?
-                <video className='videoTag' autoPlay loop muted>
+                <video className='videoTag' preload autoPlay playsinline loop muted>
                     <source src={videoUrl} type='video/mp4' />
                 </video>
                 :
