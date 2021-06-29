@@ -27,7 +27,7 @@ const VacanciesCard = ({ card, showModal }) => {
     return (
             <div className="cardVacancies">
                 <div className="top">
-                    <h2>{card.position}</h2>
+                    <h2>{card.position ? card.position : null}</h2>
                     <div className="desc">
                         {card.location ?
                             <p className="location">{card.location}</p>
@@ -37,10 +37,12 @@ const VacanciesCard = ({ card, showModal }) => {
                     </div>
                 </div>
                 <div className="cardBody">
+                    {card.text ?
                     <div className="text">
                         <MarkdownView
                             markdown={card.text}/>
                     </div>
+                    : null }
                     <button className="apply"
                             onClick={showModal}
                     >{t.apply}</button>

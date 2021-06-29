@@ -8,7 +8,7 @@ const Text = ({text}) => {
         <section className="textBlock">
             <div className="container">
                 <div className="text">
-                    {text.heading ? <h2>{text.heading}</h2> : ''}
+                    {text.heading ? <h2>{text.heading}</h2> : null}
                     {text.about ?
                         <MarkdownView
                         markdown={text.about}

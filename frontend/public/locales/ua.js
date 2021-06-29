@@ -16,5 +16,6 @@ export default {
     attentionEmail: "Введіть свою електронну адресу!",
     attentionNumber: "Введіть свій номер телефону",
     ApplyVacancy: "Подати заявку на вакансію",
-    apply: "заполнить"
+    apply: "заполнить",
+    findOutMore: "Дізнатися більше"
 }

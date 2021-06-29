@@ -30,9 +30,10 @@ const MoreProjects = ({articles, current, link}) => {
                         }
                     })
                     return(
+                        article ?
                         <Link key={article.id} href={`/${link}/${article.slug}`}>
                             <a className="card">
-                                <h2>{article.text}</h2>
+                                <h2>{article.text ? article.text : null}</h2>
                                 {firstImgEl ?
                                 <div className="top">
                                      <Image image={firstImgEl.image} />
@@ -40,6 +41,7 @@ const MoreProjects = ({articles, current, link}) => {
                                     : null}
                             </a>
                         </Link>
+                       : null
                     )
                     }
                 )}
