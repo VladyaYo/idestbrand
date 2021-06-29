@@ -16,5 +16,6 @@ export default {
     attentionEmail: "Please input your email!",
     attentionNumber: "Please input your phone number",
     ApplyVacancy: "Apply for a vacancy",
-    apply: "APPLY"
+    apply: "APPLY",
+    findOutMore: "Find out more"
 }

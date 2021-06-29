@@ -9,11 +9,11 @@ const Columns = ({columns}) => {
              <div className="columns">
                  {columns.columnItem.map((column) => {
                      return(
-                         <div key={column.heading + column.id}
+                         <div key={column.id}
                               className="item"
                          >
-                           <h2>{column.heading}</h2>
-                           <p>{column.textColumn}</p>
+                           <h2>{column.heading ? column.heading : null}</h2>
+                           <p>{column.textColumn ? column.textColumn :null}</p>
                          </div>
                      );
                  })}

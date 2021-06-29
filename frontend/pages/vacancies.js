@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import axios from "axios";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import {fetchAPI} from "../lib/api";
@@ -11,19 +10,8 @@ import ru from "../public/locales/ru";
 import ua from "../public/locales/ua";
 import en from "../public/locales/en";
 
-
-
 const Vacancies = ({ vacancies, homepage}) => {
 
-    const normFile = (e) => {
-        console.log('Upload event:', e);
-
-        if (Array.isArray(e)) {
-            return e;
-        }
-
-        return e && e.fileList;
-    };
 
     const router = useRouter();
     const {locale} = router;
@@ -104,7 +92,6 @@ const Vacancies = ({ vacancies, homepage}) => {
                         vacancies.CardVacancies.map((card) => {
                             return(
                                 <VacanciesCard  key={card.id} card={card} showModal={showModal}/>
-                                // console.log(card)
                             )})
                         : null}
                 </div>
@@ -167,17 +154,6 @@ const Vacancies = ({ vacancies, homepage}) => {
                             </Button>
                         </Upload>
                     </Form.Item>
-                    <Form.Item
-                        name="upload"
-                        label="Upload"
-                        valuePropName="fileList"
-                        getValueFromEvent={normFile}
-                        extra="longgggggggggggggggggggggggggggggggggg"
-                    >
-                        <Upload name="logo"  listType="picture">
-                            <Button>Click to upload</Button>
-                        </Upload>
-                    </Form.Item>
                     <Form.Item >
                         <Button className="submit" type="primary" htmlType="submit" >
                             {t.Send}
@@ -189,11 +165,11 @@ const Vacancies = ({ vacancies, homepage}) => {
     );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps({locale = "en"}) {
     // Run API calls in parallel
     const [vacancies, homepage] = await Promise.all([
-        fetchAPI("/vacancies"),
-        fetchAPI("/homepage"),
+        fetchAPI(`/vacancies?_locale=${locale}`),
+        fetchAPI(`/homepage?_locale=${locale}`),
     ]);
 
     return {

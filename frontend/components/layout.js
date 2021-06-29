@@ -3,9 +3,9 @@ import React from "react";
 import Footer from "./footer";
 
 
-const Layout = ({ children, categories, pageClass }) => (
+const Layout = ({ children, pageClass }) => (
     <>
-        <Nav categories={categories} className={pageClass==="mainPage"?"mainPageHeader":null}/>
+        <Nav className={pageClass==="mainPage"?"mainPageHeader":null}/>
             <main className={pageClass}>
                 {children}
             </main>

@@ -11,8 +11,25 @@ import FullScreenImage from "../components/fullscreenImage";
 import NumericText from "../components/numericText";
 import CommercialProposal from "../components/comercialProposal"
 import Link from "next/link";
+import {useRouter} from "next/router";
+import ru from "../public/locales/ru";
+import ua from "../public/locales/ua";
+import en from "../public/locales/en";
 
 const Home = ({ projects, categories, homepage }) => {
+    const router = useRouter();
+    const {locale} = router;
+    let t ;
+    switch (locale) {
+        case "ru-RU":
+            t = ru;
+            break;
+        case "uk-UA":
+            t = ua;
+            break;
+        default:
+            t = en;
+    };
 
     return (
         <Layout categories={categories} pageClass="mainPage">
@@ -27,7 +44,7 @@ const Home = ({ projects, categories, homepage }) => {
             <section className="allPostBtn">
                 <div className="container">
                     <Link href="/projects">
-                        <a>Find out more</a>
+                        <a>{t.findOutMore}</a>
                     </Link>
                 </div>
             </section>

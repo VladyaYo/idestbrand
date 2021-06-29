@@ -1,11 +1,9 @@
 import React from "react";
-import Layout from "./layout";
 import {getStrapiMedia} from "../lib/media";
-
 
 const Hero = ({ hero }) => {
     const videoUrl = getStrapiMedia(hero.video);
-    const textColor =  hero.black ? "black" : "white";
+    const textColor =  hero.black ? "#000" : "#fff";
 
     return (
         <section className="hero">
@@ -18,8 +16,8 @@ const Hero = ({ hero }) => {
             }
             <div className="container">
                 <div className="text" style={{color:textColor}}>
-                    <h1>{hero.heading}</h1>
-                    <p className="title">{hero.title}</p>
+                    <h1>{hero.heading ? hero.heading : null}</h1>
+                    <p className="title">{hero.title ? hero.title : null}</p>
                 </div>
             </div>
         </section>
