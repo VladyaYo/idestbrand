@@ -5,6 +5,9 @@
   position: sticky;
   top: 0;
   transition: .4s ease all;
+  @include respond-to($phone){
+    position: fixed;
+  }
   .container{
     @include respond-to($phone){
       width: 100%;
@@ -13,6 +16,37 @@
   &.mainPageHeader{
     background-color: transparent;
     nav{
+      &.open{
+        background-color: $white;
+        ul.logo{
+          svg{
+            path{
+              fill: $black;
+            }
+          }
+        }
+        .mobileBtn{
+          span{
+            background-color: $black;
+
+          }
+        }
+      }
+      .links li .ant-select-arrow {
+
+        .anticon{
+          svg{
+            path{
+              fill: $black
+            }
+          }
+        }
+      }
+      .mobileBtn{
+        span{
+          background-color: $white;
+        }
+      }
       ul{
         li{
           a{
@@ -24,7 +58,7 @@
               path{
                 fill: $white;
                 @include respond-to($phone){
-                  fill: $black;
+                  fill: $white;
                 }
               }
             }
@@ -42,6 +76,9 @@
           }
           span{
             color: $white;
+            @include respond-to($phone){
+              color: $black;
+            }
           }
         }
         .languagePicker{
@@ -68,6 +105,11 @@
     &.sticky{
       background-color: $white;
       nav{
+        .mobileBtn{
+          span{
+            background-color: $black;
+          }
+        }
        .links li span{
          color: $black;
        }
@@ -151,9 +193,6 @@
             top: 0;
             left: 0;
             transition: .2s ease-in-out;
-            &:nth-child(1){
-
-            }
             &:nth-child(2){
               top: 50%;
               left: 0;
@@ -173,7 +212,6 @@
           z-index: 100;
         }
         svg{
-
           path{
             fill:$black;
           }
@@ -201,6 +239,7 @@
               height: auto;
               opacity: 1;
               z-index: 100;
+              box-shadow: 0px 7px 7px 0px #888;
             }
             li{
               margin: 10px auto;
@@ -223,9 +262,7 @@
             font-size: 20px;
             line-height: 24px;
             color: $black;
-
             .ant-select-selector{
-
               &:after{
                 color: $black;
               }

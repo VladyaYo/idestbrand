@@ -13,7 +13,6 @@ html{
 }
 body{
   font-family: $noto;
-
 }
 
 a {
@@ -100,6 +99,9 @@ img{
       }
     }
   }
+}
+h1, h2, h3, h4, h5, h6 {
+  color: $black;
 }
 .ant-select-single .ant-select-selector .ant-select-selection-item, .ant-select-single .ant-select-selector .ant-select-selection-placeholder{
   transition: none;

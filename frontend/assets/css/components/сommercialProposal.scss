@@ -1,14 +1,23 @@
 .commercialProposal.formsLinks{
   background-color: $black;
-
   .links{
     padding: 45px 0;
+    display: flex;
+    flex-flow: row;
+    @include respond-to($phone){
+      flex-flow: column;
+    }
     a{
       color: $white;
       text-transform: uppercase;
       margin-right: 110px;
       position: relative;
       text-decoration: none;
+      max-width: 300px;
+      @include respond-to($phone){
+        margin-right: 0;
+        margin-top: 10px;
+      }
       &:before{
         content: '';
         position: absolute;

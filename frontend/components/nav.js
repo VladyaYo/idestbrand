@@ -7,13 +7,15 @@ import {Select} from "antd";
 import en from "../public/locales/en";
 import ru from "../public/locales/ru";
 import ua from "../public/locales/ua";
+import useWindowSize from "../utils/useWindowSize";
 const { Option } = Select;
-
 
 const Nav = ({ className, mode }) => {
     const [scroll, setScroll] = useState(0);
     //brgMenu
     const [isOpen, setOpen] = useState(false)
+
+    const { width } = useWindowSize();
 
     const handleOpenMenu = () => {
         setOpen(!isOpen)
@@ -62,13 +64,11 @@ const Nav = ({ className, mode }) => {
   return (
       <header className={classNames}>
         <div className="container">
-          <nav>
-              <ul>
+          <nav className={"navigation " + openClass}>
+              <ul className="logo">
                 <li>
                   <Link href="/homepage" >
-                    <a>
-                      <Logo/>
-                    </a>
+                    <a><Logo/></a>
                   </Link>
                 </li>
               </ul>

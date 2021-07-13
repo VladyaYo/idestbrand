@@ -13,7 +13,7 @@ const Columns = ({columns}) => {
                               className="item"
                          >
                            <h2>{column.heading ? column.heading : null}</h2>
-                           <p>{column.textColumn ? column.textColumn :null}</p>
+                           <p>{column.textColumn ? column.textColumn : null}</p>
                          </div>
                      );
                  })}

@@ -1,14 +1,23 @@
 .numericText{
   padding: 80px 0 0;
+  @include respond-to($phone){
+    padding: 40px 0 0;
+  }
   .container{
     h2{
       margin: 0 0 12px;
+      @include respond-to($phone){
+        margin: 0 0 5px;
+      }
     }
   }
   .text{
     max-width: 770px;
     .item{
       margin: 40px 0 0;
+      @include respond-to($phone){
+        margin: 15px 0 0;
+      }
       p{
         @extend %p1light;
       }

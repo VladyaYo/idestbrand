@@ -1,18 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import {getStrapiMedia} from "../lib/media";
+import useWindowSize from "../utils/useWindowSize";
 
 const Hero = ({ hero }) => {
-    const videoUrl = getStrapiMedia(hero.video);
     const textColor =  hero.black ? "#000" : "#fff";
-
+    const { width } = useWindowSize();
     return (
         <section className="hero">
-            { hero.video.mime.indexOf('video') !== -1 ?
-                <video className='videoTag' preload autoPlay playsinline loop muted>
-                    <source src={videoUrl} type='video/mp4' />
-                </video>
-                :
-                <img src={videoUrl} alt={hero.video.alternativeText}/>
+            { hero.video.mime.indexOf('video') !== -1 && width > 768 ?
+                    <video className='videoTag' autoPlay playsInline loop muted>
+                        <source src={getStrapiMedia(hero.video)} type='video/mp4' />
+                    </video>
+                    : width < 768 && hero.mobile ?
+                        <img src={getStrapiMedia(hero.mobile)} alt={hero.video.alternativeText}/>
+                    :
+                    <img src={getStrapiMedia(hero.video)} alt={hero.video.alternativeText}/>
             }
             <div className="container">
                 <div className="text" style={{color:textColor}}>

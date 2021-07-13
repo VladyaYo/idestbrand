@@ -28,7 +28,7 @@
     }
     @include respond-to($phone){
         min-height: 120px;
-
+        margin: 0 0 10px;
     }
 
     img{
@@ -57,13 +57,29 @@
         position: absolute;
         bottom: 0;
         @include respond-to($tablet-portrait){
-           padding-bottom: 20px;
+           padding: 20px 0;
         }
+        @include respond-to($phone){
+            position: relative;
+            color: $black!important;
+        }
+
         h1{
             color: inherit;
         }
         p{
             color: inherit;
+            @include respond-to($phone){
+                margin-top: 10px
+            }
         }
     }
+}
+.mainPage{
+    .hero{
+    .text{
+        @include respond-to($phone){
+            display: none;
+        }
+    }}
 }

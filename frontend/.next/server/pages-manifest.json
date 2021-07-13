@@ -1,7 +1,16 @@
 {
   "/_app": "pages/_app.js",
+  "/approach": "pages/approach.js",
+  "/approach/[slug]": "pages/approach/[slug].js",
+  "/contacts": "pages/contacts.js",
+  "/homepage": "pages/homepage.js",
+  "/": "pages/index.js",
+  "/projects": "pages/projects.js",
+  "/projects/[slug]": "pages/projects/[slug].js",
+  "/vacancies": "pages/vacancies.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/vacancies": "pages/vacancies.js",
-  "/contacts": "pages/contacts.js"
+  "/en/500": "pages/en/500.html",
+  "/uk-UA/500": "pages/uk-UA/500.html",
+  "/ru-RU/500": "pages/ru-RU/500.html"
 }

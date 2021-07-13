@@ -1,5 +1,8 @@
 .columnsText{
   margin: 60px 0 60px;
+  @include respond-to($phone){
+    margin: 60px 0 10px;
+  }
   .container{
     p.h1{
       padding: 20px 0;
@@ -7,6 +10,9 @@
       color: $black;
       font-weight: bold;
       letter-spacing: 0.08em;
+      @include respond-to($phone){
+        padding: 10px 0 0;
+      }
     }
     .columns{
       @include flex($row,$btwen,baseline);
