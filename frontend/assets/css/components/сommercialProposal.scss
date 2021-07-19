@@ -6,6 +6,7 @@
     flex-flow: row;
     @include respond-to($phone){
       flex-flow: column;
+      padding: 25px 0;
     }
     a{
       color: $white;
@@ -15,8 +16,7 @@
       text-decoration: none;
       max-width: 300px;
       @include respond-to($phone){
-        margin-right: 0;
-        margin-top: 10px;
+        margin: 15px 0 15px;
       }
       &:before{
         content: '';

@@ -1,5 +1,7 @@
 $noto:'Noto Sans' , sans-serif;
 $prompt:'Prompt', sans-serif;
+$inter:'Inter', sans-serif;
+
 $black: #000000;
 $white: #ffffff;
 $light-gray: #f0f0f0;
@@ -34,7 +36,7 @@ $dark-gray: #9e9e9e;
   line-height: 150%;
 }
 %subtitle{
-  font-family: $prompt;
+  font-family: $inter;
   font-style: normal;
   font-weight: bold;
   font-size: rem(24px);
@@ -48,11 +50,11 @@ font-size: 14px;
 line-height: 16px;
 }
 %btn{
-  font-family: $prompt;
+  font-family: $inter;
   font-style: normal;
-  font-weight: 500;
-  font-size: rem(20px);
-  line-height: 120%;
+  font-weight: 600;
+  font-size: rem(22px);
+  line-height: 155%;
   text-align: center;
   letter-spacing: 0.04em;
   text-transform: uppercase;

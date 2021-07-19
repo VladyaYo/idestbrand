@@ -5,9 +5,6 @@
   position: sticky;
   top: 0;
   transition: .4s ease all;
-  @include respond-to($phone){
-    position: fixed;
-  }
   .container{
     @include respond-to($phone){
       width: 100%;
@@ -15,6 +12,9 @@
   }
   &.mainPageHeader{
     background-color: transparent;
+    @include respond-to($phone){
+      position: fixed;
+    }
     nav{
       &.open{
         background-color: $white;
@@ -256,7 +256,7 @@
             }
           }
           .languagePicker{
-            font-family: $prompt;
+            font-family: $inter;
             font-style: normal;
             font-weight: 500;
             font-size: 20px;

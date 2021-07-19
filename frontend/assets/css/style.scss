@@ -16,13 +16,14 @@ body{
 }
 
 a {
-  font-family: $prompt;
+  font-family: $inter;
   font-size: rem(20px);
   line-height: 120%;
+  font-weight: 600;
 }
 
 h1 {
-  font-family: $prompt;
+  font-family: $inter;
   font-size: rem(44px);
   font-weight: bold;
   line-height: 145%;
@@ -31,10 +32,12 @@ h1 {
 }
 
 h2{
-  font-family: $prompt;
+  font-family: $inter;
   font-size: rem(28px);
-  font-weight: bold;
-  line-height: 143%;
+  font-weight: 900;
+  line-height: 145%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 p{
@@ -46,7 +49,7 @@ p{
 }
 
 p.h1{
-  font-family: $prompt;
+  font-family: $inter;
   font-size: rem(44px);
   line-height: 145%;
 }
@@ -68,7 +71,7 @@ img{
     margin: 0 auto 80px;
     a{
       border-bottom: 1px solid $black;
-      font-family: $prompt;
+      font-family: $inter;
       font-style: normal;
       font-weight: 500;
       font-size: 20px;

@@ -1,5 +1,5 @@
 .hero{
-    //background-color: $black;
+    background-color: $black;
     margin: 0 0 40px;
     //min-height: 100vh;
     position: relative;
@@ -10,14 +10,18 @@
     max-height: 100vh;
     //overflow-x: hidden;
     //background-color: transparent;
+    @media not all and (min-resolution:.001dpcm) {
+        @supports (-webkit-appearance:none) {
+            top:-60px
+    }}
     @include respond-to($large-desktop){
-        min-height: 771px;
+        min-height: 701px;
     }
     @include respond-to($laptop){
-        min-height: 671px;
+        min-height: 601px;
     }
     @include respond-to($laptop){
-        min-height: 671px;
+        min-height: 601px;
     }
     @include respond-to($interval-back){
         min-height: 620px;
@@ -76,10 +80,16 @@
     }
 }
 .mainPage{
+    position: relative;
+    //top:-60px;
+    @include respond-to($phone){
+        top: 0;
+    }
     .hero{
-    .text{
-        @include respond-to($phone){
-            display: none;
+        .text{
+            @include respond-to($phone){
+                display: none;
+            }
         }
-    }}
+    }
 }
