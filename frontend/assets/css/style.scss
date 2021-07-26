@@ -16,28 +16,26 @@ body{
 }
 
 a {
-  font-family: $inter;
+  font-family: $montserrat;
   font-size: rem(20px);
   line-height: 120%;
   font-weight: 600;
 }
 
 h1 {
-  font-family: $inter;
+  font-family: $montserrat;
   font-size: rem(44px);
   font-weight: bold;
   line-height: 145%;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 h2{
-  font-family: $inter;
-  font-size: rem(28px);
-  font-weight: 900;
+  font-family: $montserrat;
+  font-size: rem(26px);
+  font-weight: bold;
   line-height: 145%;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 p{
@@ -49,7 +47,7 @@ p{
 }
 
 p.h1{
-  font-family: $inter;
+  font-family: $montserrat;
   font-size: rem(44px);
   line-height: 145%;
 }
@@ -71,7 +69,7 @@ img{
     margin: 0 auto 80px;
     a{
       border-bottom: 1px solid $black;
-      font-family: $inter;
+      font-family: $montserrat;
       font-style: normal;
       font-weight: 500;
       font-size: 20px;
