@@ -23,6 +23,9 @@
           width: calc(50% - 15px);
           margin-top: 20px;
         }
+        @include respond-to($phone){
+          width: 100%;
+        }
         p{
           @extend %p2light;
         }

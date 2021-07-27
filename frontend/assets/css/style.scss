@@ -14,7 +14,10 @@ html{
 body{
   font-family: $noto;
 }
-
+.mainPage{
+  position: relative;
+  top: -10px;
+}
 a {
   font-family: $montserrat;
   font-size: rem(20px);

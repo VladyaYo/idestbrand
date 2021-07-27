@@ -67,7 +67,7 @@ const Nav = ({ className, mode }) => {
           <nav className={"navigation " + openClass}>
               <ul className="logo">
                 <li>
-                  <Link href="/homepage" >
+                  <Link href="/" >
                     <a><Logo/></a>
                   </Link>
                 </li>

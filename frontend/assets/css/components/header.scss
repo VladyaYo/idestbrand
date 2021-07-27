@@ -5,6 +5,10 @@
   position: sticky;
   top: 0;
   transition: .4s ease all;
+  @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+      top:-60px
+    }}
   .container{
     @include respond-to($phone){
       width: 100%;
@@ -12,6 +16,10 @@
   }
   &.mainPageHeader{
     background-color: transparent;
+    @media not all and (min-resolution:.001dpcm) {
+      @supports (-webkit-appearance:none) {
+        position: fixed;
+      }}
     @include respond-to($phone){
       position: fixed;
     }
