@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_card_vacancies",
+  "info": {
+    "name": "cardVacancies",
+    "icon": "comment-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "position": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

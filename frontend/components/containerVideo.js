@@ -1,0 +1,32 @@
+import React from "react";
+import { getStrapiMedia } from "../lib/media";
+import useWindowSize from "../utils/useWindowSize";
+import Vimeo from "@u-wave/react-vimeo";
+
+const ContainerVideo = ({ video }) => {
+  // const videoUrl = getStrapiMedia(video.video);
+  // const vimeoLink = video.link;
+  const { width } = useWindowSize();
+
+  const renderVideo = (item) => {
+    if (item.link) {
+      return <Vimeo video={item.link} autoplay={true} muted />;
+    } else if (item.video && width > 768) {
+      return (
+        <video className="videoTag" autoPlay playsInline loop muted>
+          <source src={getStrapiMedia(item.video)} type="video/mp4" />
+        </video>
+      );
+    } else if (item.mobile) {
+      return <img src={getStrapiMedia(item.mobile)} alt="mobile" />;
+    }
+  };
+
+  return (
+    <section className="containerVideo">
+      <div className="container">{renderVideo(video)}</div>
+    </section>
+  );
+};
+
+export default ContainerVideo;

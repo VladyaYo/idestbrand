@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_sections_texts",
+  "info": {
+    "name": "text",
+    "icon": "align-justify",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "about": {
+      "type": "richtext",
+      "required": true
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

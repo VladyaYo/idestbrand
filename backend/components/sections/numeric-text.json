@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_numeric_texts",
+  "info": {
+    "name": "numericText",
+    "icon": "bars",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.column-item"
+    }
+  }
+}

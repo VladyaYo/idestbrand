@@ -1,0 +1,32 @@
+{
+  "kind": "singleType",
+  "collectionName": "start_pages",
+  "info": {
+    "name": "StartPage",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "startPageItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.start-page-item",
+      "max": 4,
+      "min": 4,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    }
+  }
+}

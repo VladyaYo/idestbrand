@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_sections_links",
+  "info": {
+    "name": "Links",
+    "icon": "code-branch"
+  },
+  "options": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "nameLink": {
+      "type": "string"
+    }
+  }
+}

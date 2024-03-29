@@ -1,0 +1,43 @@
+.card{
+  .top{
+    height: 380px;
+    overflow: hidden;
+    @include respond-to($tablet-portrait){
+      height: 230px;
+    }
+    img{
+      object-fit: cover;
+      min-height: 100%;
+
+    }
+  }
+  p{
+    color: $black;
+    text-decoration: none;
+    @extend %p2light;
+    @include respond-to($tablet-portrait){
+      max-width: 90%;
+    }
+  }
+  p.name{
+    @extend %subtitle;
+    margin: 16px 0 13px;
+    position: relative;
+    display: inline-block;
+    &:before{
+      content: "";
+      bottom: 0px;
+      left: 0;
+      width: 0;
+      position: absolute;
+      background-color: $black;
+      height: 1px;
+      transition: .3s ease all;
+    }
+  }
+  &:hover{
+    p.name:before{
+      width: 100%;
+    }
+  }
+}

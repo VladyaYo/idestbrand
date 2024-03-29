@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/vacancies-messages",
+      "handler": "vacancies-message.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancies-messages/count",
+      "handler": "vacancies-message.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/vacancies-messages/:id",
+      "handler": "vacancies-message.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/vacancies-messages",
+      "handler": "vacancies-message.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/vacancies-messages/:id",
+      "handler": "vacancies-message.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/vacancies-messages/:id",
+      "handler": "vacancies-message.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

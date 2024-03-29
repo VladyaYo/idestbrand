@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_sections_column_items",
+  "info": {
+    "name": "columnItem",
+    "icon": "align-center",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "textColumn": {
+      "type": "text"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}

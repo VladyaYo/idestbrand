@@ -1,0 +1,29 @@
+.fullscreenVideo{
+  iframe{
+    //width: 100%;
+    width:1920px;
+    height:1080px;
+    max-width: 100%;
+    @include respond-to($phone){
+      width: 100%;
+      height: 250px
+    }
+  }
+  width: 100%;
+  //height: auto;
+  max-height: 100vh;
+  position: relative;
+  height:auto;
+  min-height: 100vh;
+  overflow: hidden;
+  @include respond-to($tablet-portrait){
+    min-height: fit-content;
+  }
+  video{
+    position: absolute;
+    width: 100%;
+    @include respond-to($tablet-portrait) {
+    position: relative;
+    }
+  }
+}

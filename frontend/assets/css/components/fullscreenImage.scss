@@ -1,0 +1,14 @@
+.mainPage{
+  .fullscreenImage{
+    padding: 60px 0 0;
+    @include respond-to($phone){
+      padding: 20px 0 0;
+    }
+  }
+}
+.fullscreenImage{
+  padding: 40px 0 0;
+img{
+  width: 100%;
+}
+}

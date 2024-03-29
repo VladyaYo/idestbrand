@@ -1,0 +1,54 @@
+.modalVacancies{
+  h4{
+    @extend %subtitle;
+    margin: 16px 0 20px;
+  }
+  .ant-modal-body{
+    padding: 24px 40px 0;
+  }
+  .ant-modal-footer{
+    padding: 0 40px 56px;
+    border: none;
+  }
+  form{
+    input, textarea{
+      border: none;
+      border-bottom: 1px solid $dark-gray;
+      border-radius: 0;
+      @extend %p2light;
+      resize: none;
+      margin: 16px 0 0;
+      &:focus{
+        outline: none;
+      }
+      &:active{
+        border-color: $black;
+        outline: none;
+      }
+      &:hover{
+        border-color: $black;
+      }
+    }
+    .ant-input:focus{
+      outline: none;
+    }
+    .uploadBtn{
+      border: none;
+      @extend %p2bold;
+      span{
+        margin-right: 10px;
+      }
+    }
+  }
+  .submit{
+    width: 100%;
+    background-color: $black;
+    border: none;
+    @extend %btn;
+    //padding: 20px 0;
+    height: 40px;
+    span{
+      //padding: 20px 0;
+    }
+  }
+}

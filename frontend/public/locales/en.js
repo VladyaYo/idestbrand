@@ -1,0 +1,21 @@
+export default {
+    projects: "projects",
+    approach: "approach",
+    vacancies: "vacancies",
+    contacts: "contacts",
+    EN: "EN",
+    RU: "RU",
+    UA: "UA",
+    AttacheYouCv: "Attache your CV",
+    Username:"Username",
+    Phone: "Phone Number",
+    PortfolioLink: "Portfolio link",
+    YourMessage: "Your message",
+    Send: "Send",
+    attentionName: "Please input your name!",
+    attentionEmail: "Please input your email!",
+    attentionNumber: "Please input your phone number",
+    ApplyVacancy: "Apply for a vacancy",
+    apply: "APPLY",
+    findOutMore: "Find out more"
+}

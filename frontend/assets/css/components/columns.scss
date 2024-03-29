@@ -1,0 +1,35 @@
+.columnsText{
+  margin: 60px 0 60px;
+  @include respond-to($phone){
+    margin: 60px 0 10px;
+  }
+  .container{
+    p.h1{
+      padding: 20px 0;
+      text-transform: uppercase;
+      color: $black;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      @include respond-to($phone){
+        padding: 10px 0 0;
+      }
+    }
+    .columns{
+      @include flex($row,$btwen,baseline);
+
+      .item{
+        width: calc(25% - 15px);
+        @include respond-to($tablet-portrait){
+          width: calc(50% - 15px);
+          margin-top: 20px;
+        }
+        @include respond-to($phone){
+          width: 100%;
+        }
+        p{
+          @extend %p2light;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+footer.footer{
+  background-color: $light-gray;
+  .container{
+    padding: 48px 0;
+  }
+  svg{
+    path{
+      fill:$black;
+    }
+  }
+  nav{
+    @include flex($row,$btwen,$center);
+    .logoLink{
+      margin-bottom: 30px;
+    }
+    li{
+      @extend %p2light;
+      color: $black;
+      margin-bottom: 8px;
+      a{
+        @extend %p2light;
+        color: $black;
+      }
+    }
+    .links{
+      margin: 30px 0 0;
+      li{
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        svg{
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

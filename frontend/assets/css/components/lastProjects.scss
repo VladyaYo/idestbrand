@@ -1,0 +1,30 @@
+.projects{
+  width: 100%;
+  padding-top: 120px;
+  @include respond-to($phone){
+    padding-top: 40px;
+  }
+  .container{
+    @include flex($row,$btwen,$start);
+    a{
+      max-width: 570px;
+      width: 100%;
+      margin-bottom: 40px;
+
+      @include respond-to($phone){
+        max-width: 100%;
+        width: 100%;
+        margin: auto;
+      }
+    }
+  }
+}
+.mainPage{
+  .projects .container a {
+    max-width: 49%;
+    @include respond-to($phone){
+      max-width: 100%;
+      margin: 0 0 30px;
+    }
+  }
+}

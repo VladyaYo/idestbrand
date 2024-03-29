@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/all-approach",
+      "handler": "all-approach.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/all-approach",
+      "handler": "all-approach.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/all-approach",
+      "handler": "all-approach.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

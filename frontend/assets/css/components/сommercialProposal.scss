@@ -1,0 +1,36 @@
+.commercialProposal.formsLinks{
+  background-color: $black;
+  .links{
+    padding: 45px 0;
+    display: flex;
+    flex-flow: row;
+    @include respond-to($phone){
+      flex-flow: column;
+      padding: 25px 0;
+    }
+    a{
+      color: $white;
+      text-transform: uppercase;
+      margin-right: 110px;
+      position: relative;
+      text-decoration: none;
+      max-width: 300px;
+      @include respond-to($phone){
+        margin: 15px 0 15px;
+      }
+      &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0;
+        transition: .3s ease all;
+        background-color: $white;
+        height: 1px;
+      }
+        &:hover:before{
+          width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.startPageLayout{
+  padding: 130px 0 50px;
+  @include respond-to($tablet-portrait){
+    padding: 50px 0;
+  }
+  .logoStart{
+    margin: auto;
+    display: flex;
+    svg{
+      margin: auto;
+    }
+  }
+    .grid {
+      padding: 56px 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 30px;
+      grid-row-gap: 30px;
+      @include respond-to($tablet-portrait){
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+      @include respond-to($phone){
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+      }
+
+    }
+
+    .item {
+      p{
+        color: black;
+        margin-bottom: 16px;
+        span{
+          @extend %p1bold
+        }
+      }
+    &:first-child{
+      grid-area: 1 / 1 / 3 / 3;
+      @include respond-to($tablet-portrait){
+        grid-area: 2 span;
+      }
+    }
+    &:nth-child(2) {
+      grid-area: 1 / 3 / 3 / 4;
+      @include respond-to($tablet-portrait){
+        grid-area: 2 span;
+      }
+    }
+    }
+  }
