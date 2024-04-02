@@ -106,6 +106,16 @@
           "localized": true
         }
       }
+    },
+    "productColumns": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.column"
     }
   }
 }

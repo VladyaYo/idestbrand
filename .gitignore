@@ -130,3 +130,4 @@ package-lock.json
 ############################
 
 /uploads/*
+frontend/.env.local

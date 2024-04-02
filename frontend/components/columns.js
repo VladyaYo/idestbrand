@@ -1,9 +1,15 @@
 import React from "react";
+import classnames from "classnames";
 
 
-const Columns = ({columns}) => {
+const Columns = ({columns, className}) => {
+
+    const classNames = classnames(
+        'columnsText',
+        className
+    );
     return (
-        <section className="columnsText">
+        <section className={classNames}>
          <div className="container">
              <p className='h1'>{columns.heading}</p>
              <div className="columns">
