@@ -38,7 +38,7 @@ const Home = ({ projects, categories, homepage }) => {
       <Text text={homepage.textBlock} />
       <FullScreenVideo video={homepage.video} />
       <Columns columns={homepage.columnsBlock} />
-      <Columns columns={homepage.productColumns} className="productColumns" />
+      {homepage.productColumns && <Columns columns={homepage.productColumns} className="productColumns" />}
       <FullScreenImage image={homepage.singleImage} />
       {homepage.numericText ? <NumericText rows={homepage.numericText} /> : null}
       <Articles articles={projects} count={4} />

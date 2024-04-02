@@ -11,7 +11,7 @@ const Columns = ({columns, className}) => {
     return (
         <section className={classNames}>
          <div className="container">
-             <p className='h1'>{columns.heading}</p>
+             <p className='h1'>{columns.heading ? columns.heading : ""}</p>
              <div className="columns">
                  {columns.columnItem.map((column) => {
                      return(
