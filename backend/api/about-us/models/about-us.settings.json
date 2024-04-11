@@ -26,27 +26,17 @@
         }
       }
     },
-    "video": {
+    "communicationText": {
       "type": "component",
       "repeatable": false,
-      "component": "sections.video",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "component": "sections.text"
     },
-    "brandingColumns": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.column",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "productsColumns": {
+    "advantagesColumns": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {
@@ -56,7 +46,17 @@
       },
       "component": "sections.column"
     },
-    "commercial": {
+    "clientsText": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.text"
+    },
+    "servicesText": {
       "type": "component",
       "repeatable": false,
       "pluginOptions": {

@@ -35,9 +35,10 @@ const About = ({ projects, categories, about }) => {
     <Layout categories={categories} pageClass="aboutUs">
       {/* <Seo seo={homepage.seo} /> */}
       <Text text={about.mainText} />
-      <FullScreenVideo video={about.video} />
-      <Columns columns={about.brandingColumns} />
-      {about.productsColumns && <Columns columns={about.productsColumns} className="productColumns" />}
+      <Text text={about.communicationText} />
+      {about.advantagesColumns && <Columns columns={about.advantagesColumns} className="adventagesColumns" />}
+      <Text text={about.clientsText} />
+      <Text text={about.servicesText} />
       <Articles articles={projects} count={4} />
       <section className="allPostBtn">
         <div className="container">
@@ -46,7 +47,6 @@ const About = ({ projects, categories, about }) => {
           </Link>
         </div>
       </section>
-      <Text text={about.commercial} />
       {/* <FullScreenImage image={homepage.singleImage} />
       {homepage.productColumns && <Columns columns={homepage.productColumns} className="productColumns" />}
       {homepage.numericText ? <NumericText rows={homepage.numericText} /> : null}
