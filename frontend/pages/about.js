@@ -39,6 +39,7 @@ const About = ({ projects, categories, about }) => {
       {about.advantagesColumns && <Columns columns={about.advantagesColumns} className="adventagesColumns" />}
       <Text text={about.clientsText} />
       <Text text={about.servicesText} />
+      {about.servicesColumns && <Columns columns={about.servicesColumns} className="adventagesColumns" />}
       <Articles articles={projects} count={4} />
       <section className="allPostBtn">
         <div className="container">
