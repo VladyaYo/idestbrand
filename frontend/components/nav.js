@@ -99,6 +99,11 @@ const Nav = ({ className, mode }) => {
                           <a>{t.contacts}</a>
                       </Link>
                   </li>
+                  <li className={router.pathname == "/about" ? "active" : ""}>
+                      <Link href="/about">
+                          <a>{t.aboutUs}</a>
+                      </Link>
+                  </li>
                   <li>
                       <Select
                           className="languagePicker"

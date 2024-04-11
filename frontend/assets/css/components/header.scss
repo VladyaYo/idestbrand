@@ -226,7 +226,7 @@
         &.links{
           @include flex($row,$btwen,$center);
           width: 90%;
-          max-width: 675px;
+          max-width: 775px;
           @include respond-to($tablet-portrait){
             max-width: 535px;
           }
