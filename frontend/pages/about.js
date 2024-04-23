@@ -5,11 +5,7 @@ import Columns from "../components/columns";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
-import Hero from "../components/hero";
-import FullScreenVideo from "../components/fullScreenVideo";
-import FullScreenImage from "../components/fullscreenImage";
-import NumericText from "../components/numericText";
-import CommercialProposal from "../components/comercialProposal";
+import ContainerImage from "../components/containerImage";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import ru from "../public/locales/ru";
@@ -35,9 +31,21 @@ const About = ({ projects, categories, about }) => {
     <Layout categories={categories} pageClass="aboutUs">
       {/* <Seo seo={homepage.seo} /> */}
       <Text text={about.mainText} />
+      <ContainerImage
+            image={about.image1}
+          />
       <Text text={about.communicationText} />
+      <ContainerImage
+            image={about.image2}
+          />
       {about.advantagesColumns && <Columns columns={about.advantagesColumns} className="adventagesColumns" />}
+      <ContainerImage
+            image={about.image3}
+          />
       <Text text={about.clientsText} />
+      <ContainerImage
+           image={about.image4}
+          />
       <Text text={about.servicesText} />
       {about.servicesColumns && <Columns columns={about.servicesColumns} className="adventagesColumns" />}
       <Articles articles={projects} count={4} />
