@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 import ru from "../public/locales/ru";
 import ua from "../public/locales/ua";
 import en from "../public/locales/en";
+import RichColumns from "../components/richColumns";
 
 const About = ({ projects, categories, about }) => {
   const router = useRouter();
@@ -47,7 +48,7 @@ const About = ({ projects, categories, about }) => {
            image={about.image4}
           />
       <Text text={about.servicesText} />
-      {about.servicesColumns && <Columns columns={about.servicesColumns} className="adventagesColumns" />}
+      <RichColumns columns={about.markdownColumns} className="adventagesColumns" />
       <Articles articles={projects} count={4} />
       <section className="allPostBtn">
         <div className="container">

@@ -110,6 +110,9 @@ h1, h2, h3, h4, h5, h6 {
 .ant-select-single .ant-select-selector .ant-select-selection-item, .ant-select-single .ant-select-selector .ant-select-selection-placeholder{
   transition: none;
 }
+strong{
+  font-weight: 700;
+}
 @import "components/startPageLayout";
 @import "components/header";
 @import "components/hero";

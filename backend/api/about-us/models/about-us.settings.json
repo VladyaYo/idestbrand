@@ -115,6 +115,16 @@
         }
       },
       "component": "sections.image"
+    },
+    "markdownColumns": {
+      "type": "component",
+      "repeatable": false,
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "sections.markdown-columns"
     }
   }
 }

@@ -60,3 +60,9 @@
     }
 }
 }
+.richColumns{
+  margin-top: 10px;
+  .container .columns .item {
+    margin-top: 0;
+  }
+}

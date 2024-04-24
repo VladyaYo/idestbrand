@@ -3,10 +3,11 @@ import classnames from "classnames";
 import MarkdownView from "react-showdown";
 
 
-const Columns = ({columns, className}) => {
+const RichColumns = ({columns, className}) => {
 
     const classNames = classnames(
         'columnsText',
+        'richColumns',
         className
     );
     return (
@@ -14,13 +15,19 @@ const Columns = ({columns, className}) => {
          <div className="container">
          {columns.heading && <p className='h1'>{columns.heading ? columns.heading[0].toUpperCase() + columns.heading.slice(1) : ""}</p>}
              <div className="columns">
-                 {columns.columnItem.map((column) => {
+                 {columns.richTextBlock.map((column) => {
                      return(
                          <div key={column.id}
                               className="item"
                          >
-                           <h2>{column.heading ? column.heading[0].toUpperCase() + column.heading.slice(1) : null}</h2>
-                           <p>{column.textColumn ? column.textColumn : null}</p>
+                           <MarkdownView
+                            markdown={column.text}
+                            options={
+                            { 
+                                emoji: true,
+                                literalMidWordUnderscores:true,
+                            }}
+                            />
                          </div>
                      );
                  })}
@@ -30,4 +37,4 @@ const Columns = ({columns, className}) => {
     );
 };
 
-export default Columns;
+export default RichColumns;

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_sections_markdown_columns",
+  "info": {
+    "name": "markdownColumns",
+    "icon": "grip-lines-vertical",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "richTextBlock": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.text-block"
+    },
+    "heading": {
+      "type": "string"
+    }
+  }
+}
