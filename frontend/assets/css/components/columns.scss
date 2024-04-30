@@ -70,9 +70,6 @@
 .markerOdd{
   .item{
     position: relative;
-    &:first-child{
-      content: "";
-    }
     &:nth-child(odd){
     &::before{
       left: -40px;
@@ -82,6 +79,11 @@
       font-size: 40px;
     }
   }
+  &:first-child{
+    &::before{
+    content: "";
+  }
+}
   }
   }
 .marker{
