@@ -61,8 +61,35 @@
 }
 }
 .richColumns{
-  margin-top: 10px;
+  margin-top: 0;
   .container .columns .item {
     margin-top: 0;
+    margin-bottom: 20px;
+  }
+}
+.markerOdd{
+  .item{
+    position: relative;
+    &:nth-child(odd){
+    &::before{
+      left: -40px;
+      top: calc(50% - 20px);
+      position: absolute;
+      content: "*";
+      font-size: 40px;
+    }
+  }
+  }
+  }
+.marker{
+  .item{
+  position: relative;
+    &::before{
+      left: -40px;
+      top: calc(50% - 20px);
+      position: absolute;
+      content: "*";
+      font-size: 40px;
+    }
   }
 }

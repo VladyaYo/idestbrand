@@ -1,7 +1,5 @@
 import React from "react";
 import classnames from "classnames";
-import MarkdownView from "react-showdown";
-
 
 const Columns = ({columns, className}) => {
 

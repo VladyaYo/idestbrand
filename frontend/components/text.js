@@ -1,14 +1,21 @@
 import React from "react";
 import MarkdownView from 'react-showdown';
+import classnames from "classnames";
 
-const Text = ({text}) => {
+
+const Text = ({text, className}) => {
+
+    const classNames = classnames(
+        'columnsText',
+        className
+    );
 
     return (
-        text ?
+        text &&
         <section className="textBlock">
             <div className="container">
                 <div className="text">
-                    {text.heading ? <h2>{text.heading}</h2> : null}
+                    {text.heading ? <h2 className={className==="uppercase" && "h1"}>{text.heading}</h2> : null}
                     {text.about ?
                         <MarkdownView
                         markdown={text.about}
@@ -22,7 +29,6 @@ const Text = ({text}) => {
                 </div>
             </div>
         </section>
-            : null
     );
 };
 

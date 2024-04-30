@@ -40,6 +40,11 @@ h2{
   font-weight: bold;
   line-height: 145%;
 }
+h2.h1{
+  font-family: $montserrat;
+  font-size: rem(44px);
+  line-height: 145%;
+}
 
 p{
   font-family: $noto;

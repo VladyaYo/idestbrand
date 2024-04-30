@@ -39,7 +39,7 @@ const About = ({ projects, categories, about }) => {
       <ContainerImage
             image={about.image2}
           />
-      {about.advantagesColumns && <Columns columns={about.advantagesColumns} className="adventagesColumns" />}
+      {about.advantagesColumns && <Columns columns={about.advantagesColumns} className="adventagesColumns marker" />}
       <ContainerImage
             image={about.image3}
           />
@@ -47,8 +47,8 @@ const About = ({ projects, categories, about }) => {
       <ContainerImage
            image={about.image4}
           />
-      <Text text={about.servicesText} />
-      <RichColumns columns={about.markdownColumns} className="adventagesColumns" />
+      <Text className="uppercase" text={about.servicesText} />
+      <RichColumns columns={about.markdownColumns} className="adventagesColumns markerOdd" />
       <Articles articles={projects} count={4} />
       <section className="allPostBtn">
         <div className="container">
