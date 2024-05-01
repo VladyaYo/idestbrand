@@ -69,29 +69,35 @@
 }
 .markerOdd{
   .item{
+    @include respond-to($phone){
+      margin: 0 30px;
+    }
     position: relative;
     &:nth-child(odd){
-    &::before{
-      left: -40px;
-      top: calc(50% - 20px);
-      position: absolute;
-      content: "*";
-      font-size: 40px;
+      &::before{
+        left: -40px;
+        top: 0;
+        position: absolute;
+        content: "*";
+        font-size: 40px;
+      }
+    }
+    &:first-child{
+      &::before{
+        content: "";
+      } 
     }
   }
-  &:first-child{
-    &::before{
-    content: "";
-  }
 }
-  }
-  }
 .marker{
   .item{
+    @include respond-to($phone){
+      margin: 0 30px;
+    }
   position: relative;
     &::before{
       left: -40px;
-      top: calc(50% - 20px);
+      top: 0;
       position: absolute;
       content: "*";
       font-size: 40px;
