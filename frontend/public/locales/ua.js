@@ -3,7 +3,7 @@ export default {
     approach: "підхід",
     vacancies: "вакансії",
     contacts: "контакти",
-    aboutUs: "о нас",
+    aboutUs: "про нас",
     EN: "EN",
     RU: "RU",
     UA: "UA",
