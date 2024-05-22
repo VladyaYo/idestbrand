@@ -18,5 +18,8 @@ export default {
     attentionNumber: "Введіть свій номер телефону",
     ApplyVacancy: "Подати заявку на вакансію",
     apply: "Заповнити",
-    findOutMore: "Дізнатися більше"
+    findOutMore: "Дізнатися більше",
+    previous: "Попередний",
+    next: "Наступний",
+    moreProjects: "Більше проєктів"
 }

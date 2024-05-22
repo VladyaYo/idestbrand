@@ -18,5 +18,8 @@ export default {
     attentionPhone: "Пожалуйста, введите свой номер телефона",
     ApplyVacancy: "Подать заявку на вакансию",
     apply:"заполнить",
-    findOutMore: "Узнать больше"
+    findOutMore: "Узнать больше",
+    previous: "Предыдущий",
+    next: "Следующий",
+    moreProjects: "Больше проектов"
 }

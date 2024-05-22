@@ -10,8 +10,27 @@ import ContainerVideo from "../../components/containerVideo";
 import ContainerImage from "../../components/containerImage";
 import Breadcrumbs from "../../components/breadcrumbs";
 import MoreProjects from "../../components/moreProjects";
+import {useRouter} from "next/router";
+import ru from "../../public/locales/ru";
+import ua from "../../public/locales/ua";
+import en from "../../public/locales/en";
+
 
 const Project = ({ project, seo, projects }) => {
+
+  const router = useRouter();
+  const {locale} = router;
+  let t ;
+  switch (locale) {
+      case "ru-RU":
+          t = ru;
+          break;
+      case "uk-UA":
+          t = ua;
+          break;
+      default:
+          t = en;
+  };
   const renderContent = (content) => {
     switch (content.__component) {
       case "sections.fullscreen-image":
@@ -61,7 +80,7 @@ const Project = ({ project, seo, projects }) => {
       {projects[1] ? (
         <section className="more">
           <div className="container">
-            <h2>More projects</h2>
+            <h2>{t.moreProjects}</h2>
           </div>
         </section>
       ) : null}

@@ -1,8 +1,28 @@
 import React from "react";
 import Link from "next/link";
 import Image from "./image";
+import {useRouter} from "next/router";
+import ru from "../public/locales/ru";
+import ua from "../public/locales/ua";
+import en from "../public/locales/en";
+
 
 const MoreProjects = ({ articles, current, link }) => {
+
+  const router = useRouter();
+  const {locale} = router;
+  let t ;
+  switch (locale) {
+      case "ru-RU":
+          t = ru;
+          break;
+      case "uk-UA":
+          t = ua;
+          break;
+      default:
+          t = en;
+  };
+
   const currentArticleIndex = articles.findIndex(
     (article) => article.id === current
   );
@@ -11,12 +31,12 @@ const MoreProjects = ({ articles, current, link }) => {
   let nextArticle;
   const morePosts = [];
   if (currentArticleIndex - 1 >= 0) {
-    prevArticle = { ...articles[currentArticleIndex - 1], text: "Previous" };
+    prevArticle = { ...articles[currentArticleIndex - 1], text: t.previous };
     morePosts.push(prevArticle);
   }
 
   if (currentArticleIndex + 1 < articles.length) {
-    nextArticle = { ...articles[currentArticleIndex + 1], text: "Next" };
+    nextArticle = { ...articles[currentArticleIndex + 1], text: t.next };
     morePosts.push(nextArticle);
   }
 
