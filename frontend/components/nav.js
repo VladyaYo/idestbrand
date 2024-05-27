@@ -79,6 +79,11 @@ const Nav = ({ className, mode }) => {
                   <span></span>
               </div>
               <ul className={"links " + openClass}>
+              <li className={router.pathname == "/about" ? "active" : ""}>
+                      <Link href="/about">
+                          <a>{t.aboutUs}</a>
+                      </Link>
+                  </li>
                   <li className={router.pathname == "/projects" ? "active" : ""}>
                       <Link href="/projects" >
                           <a>{t.projects}</a>
@@ -97,11 +102,6 @@ const Nav = ({ className, mode }) => {
                   <li className={router.pathname == "/contacts" ? "active" : ""}>
                       <Link href="/contacts">
                           <a>{t.contacts}</a>
-                      </Link>
-                  </li>
-                  <li className={router.pathname == "/about" ? "active" : ""}>
-                      <Link href="/about">
-                          <a>{t.aboutUs}</a>
                       </Link>
                   </li>
                   <li>
