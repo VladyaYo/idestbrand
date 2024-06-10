@@ -31,24 +31,28 @@ const About = ({ projects, categories, about }) => {
   return (
     <Layout categories={categories} pageClass="aboutUs">
       {/* <Seo seo={homepage.seo} /> */}
-      <Text text={about.mainText} />
+      <Text text={about?.mainText} />
+      {about.image1 ?
       <ContainerImage
-            image={about.image1}
+            image={about?.image1}
           />
-      <Text text={about.communicationText} />
+        : null}
+      <Text text={about?.communicationText} />
+      {about.image2 && <ContainerImage
+            image={about?.image2}
+          />
+          }
+      {about.advantagesColumns && <Columns columns={about?.advantagesColumns} className="adventagesColumns marker" />}
+      {about.image3 && <ContainerImage
+            image={about?.image3}
+          />}
+      <Text text={about?.clientsText} />
+      {/* {about.image4 ? 
       <ContainerImage
-            image={about.image2}
-          />
-      {about.advantagesColumns && <Columns columns={about.advantagesColumns} className="adventagesColumns marker" />}
-      <ContainerImage
-            image={about.image3}
-          />
-      <Text text={about.clientsText} />
-      <ContainerImage
-           image={about.image4}
-          />
-      <Text className="uppercase" text={about.servicesText} />
-      <RichColumns columns={about.markdownColumns} className="adventagesColumns markerOdd" />
+           image={about?.image4}
+          /> : null}  */}
+      <Text className="uppercase" text={about?.servicesText} />
+      <RichColumns columns={about?.markdownColumns} className="adventagesColumns markerOdd" />
       <Articles articles={projects} count={4} />
       <section className="allPostBtn">
         <div className="container">

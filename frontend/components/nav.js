@@ -85,7 +85,7 @@ const Nav = ({ className, mode }) => {
                       </Link>
                   </li>
                   <li className={router.pathname == "/projects" ? "active" : ""}>
-                      <Link href="/projects" >
+                      <Link href="/projects">
                           <a>{t.projects}</a>
                       </Link>
                   </li>

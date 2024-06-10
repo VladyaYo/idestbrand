@@ -15,7 +15,7 @@ const Text = ({text, className}) => {
         <section className="textBlock">
             <div className="container">
                 <div className="text">
-                    {text.heading ? <h2 className={className==="uppercase" && "h1"}>{text.heading}</h2> : null}
+                    {text.heading ? <h2 className={className==="uppercase" ? "h1" : null}>{text.heading}</h2> : null}
                     {text.about ?
                         <MarkdownView
                         markdown={text.about}

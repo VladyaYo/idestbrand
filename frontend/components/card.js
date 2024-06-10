@@ -13,19 +13,20 @@ const Card = ({ article }) => {
         if(item.about){
             return item
         }
+        else return null
     })
 
   return (
     <Link href={`/projects/${article.slug}`}>
       <a className="card">
           <div className="top">
-            {firstImgEl ? <Image image={firstImgEl.image} /> :''}
+            {firstImgEl ? <Image image={firstImgEl?.image} /> :''}
           </div>
           <div className="cardBody">
             <p className="name">
               {article.projectName}
             </p>
-              {firstTxtEl.about ? <p className="title">{firstTxtEl.about.substring(0,120) + '...'}</p> : null}
+              {firstTxtEl?.about ? <p className="title">{firstTxtEl?.about?.substring(0,120) + '...'}</p> : null}
           </div>
       </a>
     </Link>
