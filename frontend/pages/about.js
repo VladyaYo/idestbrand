@@ -47,10 +47,7 @@ const About = ({ projects, categories, about }) => {
             image={about?.image3}
           />}
       <Text text={about?.clientsText} />
-      {/* {about.image4 ? 
-      <ContainerImage
-           image={about?.image4}
-          /> : null}  */}
+      {about.image4 && <ContainerImage image={about?.image4}/> } 
       <Text className="uppercase" text={about?.servicesText} />
       <RichColumns columns={about?.markdownColumns} className="adventagesColumns markerOdd" />
       <Articles articles={projects} count={4} />
