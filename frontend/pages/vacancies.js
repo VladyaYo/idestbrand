@@ -34,7 +34,7 @@ const Vacancies = ({ vacancies, homepage}) => {
     const showModal = (title) => {
         // console.log(title, 'title');
         setIsModalVisible(true);
-        // setSelectedVacancyTitle(title);
+        setSelectedVacancyTitle(title);
     };
 
     const handleOk = () => {
