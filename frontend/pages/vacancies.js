@@ -32,8 +32,8 @@ const Vacancies = ({ vacancies, homepage}) => {
     const [selectedVacancyTitle, setSelectedVacancyTitle] = useState("");
 
     const showModal = (title) => {
-        setSelectedVacancyTitle(title);
         setIsModalVisible(true);
+        setSelectedVacancyTitle(title);
     };
 
     const handleOk = () => {
@@ -156,7 +156,7 @@ const Vacancies = ({ vacancies, homepage}) => {
                     { vacancies.CardVacancies ?
                         vacancies.CardVacancies.map((card) => {
                             return(
-                                <VacanciesCard  key={card.id} card={card} showModal={() => showModal(card.position)}/>
+                                <VacanciesCard  key={card.id} card={card} showModal={() => showModal(card?.position)}/>
                             )})
                         : null}
                 </div>
