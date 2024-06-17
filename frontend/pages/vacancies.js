@@ -156,7 +156,7 @@ const Vacancies = ({ vacancies, homepage}) => {
                     { vacancies.CardVacancies ?
                         vacancies.CardVacancies.map((card) => {
                             return(
-                                <VacanciesCard  key={card.id} card={card} showModal={() => showModal(card?.position)}/>
+                                <VacanciesCard  key={card.id} card={card} showModal={() => showModal(card?.position ? card.position : "")}/>
                             )})
                         : null}
                 </div>
