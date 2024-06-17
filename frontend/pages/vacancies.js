@@ -32,9 +32,9 @@ const Vacancies = ({ vacancies, homepage}) => {
     const [selectedVacancyTitle, setSelectedVacancyTitle] = useState("");
 
     const showModal = (title) => {
-        console.log(title, 'title')
+        // console.log(title, 'title');
         setIsModalVisible(true);
-        setSelectedVacancyTitle(title);
+        // setSelectedVacancyTitle(title);
     };
 
     const handleOk = () => {
