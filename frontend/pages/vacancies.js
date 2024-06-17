@@ -29,8 +29,10 @@ const Vacancies = ({ vacancies, homepage}) => {
     };
 
     const [isModalVisible, setIsModalVisible] = useState(false);
+    const [selectedVacancyTitle, setSelectedVacancyTitle] = useState("");
 
-    const showModal = () => {
+    const showModal = (title) => {
+        setSelectedVacancyTitle(title);
         setIsModalVisible(true);
     };
 
@@ -46,36 +48,97 @@ const Vacancies = ({ vacancies, homepage}) => {
         console.log('Failed:', errorInfo);
     };
     const submitHandler = async (values) => {
-        // console.log(values.file.fileList[0])
+        // console.log (values, 'values')
+        const botToken = `${process.env.NEXT_PUBLIC_STRAPI_TG_BOT_TOKEN}`;
+
+        const chatId = `${process.env.NEXT_PUBLIC_STRAPI_TG_CHAT_ID}`;
+    
+        const message = `
+        Vacancy: ${selectedVacancyTitle}
+        Name: ${values.username}
+        Phone: ${values.phone}
+        Email: ${values.email}
+        Link: ${values.link}
+        Message: ${values.message}
+        `;
+    
         try {
-            await fetchAPI('/vacancies-messages', {
+            // Send form data message to Telegram
+            await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    name: values.username,
-                    phone: values.phone,
-                    email: values.email,
-                    link: values.link,
-                    message:values.message,
-                    cv: values.upload,
+                    chat_id: chatId,
+                    text: message,
                 }),
-            })
-            await fetchAPI('/upload', {
-                method: 'POST',
-                headers: {
-                    "Content-Type": "multipart/form-data; boundary=—-WebKitFormBoundaryfgtsKTYLsT7PNUVD"
-                },
-                // body: values.file.fileList[0],
-                body: values.file.name,
-            })
+            });
+            await fetchAPI('/vacancies-messages', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                name: values.username,
+                                phone: values.phone,
+                                email: values.email,
+                                link: values.link,
+                                message:values.message,
+                                cv: values.upload,
+                            }),
+                        })
+    
+            // Send file to Telegram
+            // const formData = new FormData();
+            // formData.append('chat_id', chatId);
+            // formData.append('document', values.file.fileList[0].originFileObj);
+    
+            // await fetch(`https://api.telegram.org/bot${botToken}/sendDocument`, {
+            //     method: 'POST',
+            //     body: formData,
+            // });
+    
+            toast.success("Form Success");
         } catch (err) {
-            console.log(err)
+            console.log(err);
+            toast.error("Form Submission Failed");
+        } finally {
+            setIsModalVisible(false);
         }
-        setIsModalVisible(false);
-        toast.success("Form Success");
-    }
+    };
+    
+    // const submitHandler = async (values) => {
+    //     // console.log(values.file.fileList[0])
+    //     try {
+    //         await fetchAPI('/vacancies-messages', {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 name: values.username,
+    //                 phone: values.phone,
+    //                 email: values.email,
+    //                 link: values.link,
+    //                 message:values.message,
+    //                 cv: values.upload,
+    //             }),
+    //         })
+    //         await fetchAPI('/upload', {
+    //             method: 'POST',
+    //             headers: {
+    //                 "Content-Type": "multipart/form-data; boundary=—-WebKitFormBoundaryfgtsKTYLsT7PNUVD"
+    //             },
+    //             // body: values.file.fileList[0],
+    //             body: values.file.name,
+    //         })
+    //     } catch (err) {
+    //         console.log(err)
+    //     }
+    //     setIsModalVisible(false);
+    //     toast.success("Form Success");
+    // }
 
     return (
         <Layout pageClass="vacancies">
@@ -93,7 +156,7 @@ const Vacancies = ({ vacancies, homepage}) => {
                     { vacancies.CardVacancies ?
                         vacancies.CardVacancies.map((card) => {
                             return(
-                                <VacanciesCard  key={card.id} card={card} showModal={showModal}/>
+                                <VacanciesCard  key={card.id} card={card} showModal={() => showModal(card.position)}/>
                             )})
                         : null}
                 </div>
@@ -101,7 +164,7 @@ const Vacancies = ({ vacancies, homepage}) => {
             <ContactUsFooter data={vacancies.footer}/>
             <Modal
                 wrapClassName="modalVacancies"
-                visible={isModalVisible}
+                open={isModalVisible}
                 onOk={handleOk}
                 footer={[]}
                 onCancel={handleCancel}

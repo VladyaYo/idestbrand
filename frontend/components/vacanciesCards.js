@@ -22,7 +22,7 @@ const VacanciesCard = ({ card, showModal }) => {
             t =  en;
     };
 
-    const dateFormating = DateTime.fromISO(card.date).toLocaleString(DateTime.DATE_MED)
+    const dateFormating = DateTime.fromISO(card?.date).toLocaleString(DateTime.DATE_MED) && null;
 
     return (
             <div className="cardVacancies">
