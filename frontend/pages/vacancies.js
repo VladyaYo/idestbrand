@@ -13,7 +13,6 @@ import en from "../public/locales/en";
 
 const Vacancies = ({ vacancies, homepage}) => {
 
-
     const router = useRouter();
     const {locale} = router;
     let t ;
@@ -32,7 +31,7 @@ const Vacancies = ({ vacancies, homepage}) => {
     const [selectedVacancyTitle, setSelectedVacancyTitle] = useState("");
 
     const showModal = (title) => {
-        // console.log(title, 'title');
+        console.log(title, 'title');
         setIsModalVisible(true);
         setSelectedVacancyTitle(title);
     };
@@ -157,9 +156,9 @@ const Vacancies = ({ vacancies, homepage}) => {
                     { vacancies.CardVacancies ?
                         vacancies.CardVacancies.map((card) => {
                             return(
-                                <VacanciesCard  key={card.id} card={card} showModal={() => showModal(card?.position ? card.position : "")}/>
+                                <VacanciesCard  key={card.id} card={card} showModal={() => showModal(card?.position)}/>
                             )})
-                        : null}
+                        : null} 
                 </div>
             </section>
             <ContactUsFooter data={vacancies.footer}/>
