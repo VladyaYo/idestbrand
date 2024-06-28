@@ -21,5 +21,9 @@ export default {
     findOutMore: "Узнать больше",
     previous: "Предыдущий",
     next: "Следующий",
-    moreProjects: "Больше проектов"
+    moreProjects: "Больше проектов",
+    applyForCooperation: "Подать заявку на сотрудничество",
+    companyName: "Название компании",
+    howCanWeBeUseful: "Чем мы можем быть полезны",
+    yourName: "Ваше имя"
 }

@@ -21,6 +21,10 @@ export default {
     findOutMore: "Find out more",
     previous: "Previous",
     next: "Next",
-    moreProjects: "More projects"
+    moreProjects: "More projects",
+    applyForCooperation: "Apply for cooperation",
+    companyName: "Company name",
+    howCanWeBeUseful: "How can we be useful",
+    yourName: "Your name"
 
 }

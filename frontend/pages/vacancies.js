@@ -54,6 +54,7 @@ const Vacancies = ({ vacancies, homepage}) => {
         const chatId = `${process.env.NEXT_PUBLIC_STRAPI_TG_CHAT_ID}`;
     
         const message = `
+        Vacancy form
         Vacancy: ${selectedVacancyTitle}
         Name: ${values.username}
         Phone: ${values.phone}

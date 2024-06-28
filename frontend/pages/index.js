@@ -15,6 +15,7 @@ import { useRouter } from "next/router";
 import ru from "../public/locales/ru";
 import ua from "../public/locales/ua";
 import en from "../public/locales/en";
+import CommercialFormBlock from "../components/comercialFormBlock";
 
 const Home = ({ projects, categories, homepage }) => {
   const router = useRouter();
@@ -51,6 +52,7 @@ const Home = ({ projects, categories, homepage }) => {
       </section>
       <Text text={homepage.commercial} />
       <CommercialProposal links={homepage.commercialLinks} />
+      <CommercialFormBlock/>
     </Layout>
   );
 };
