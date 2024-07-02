@@ -130,13 +130,14 @@ const CommercialFormBlock = () => {
                     </Form.Item>
                 </Form>
             </Modal>
-            <section>
-            <div className="container">
-                <h2>{t.applyForCooperation}</h2>
-            <Button onClick={showModal}>
-             {t.apply} 
-            </Button>
-            </div>
+            <section className="comercialFormBlock commercialProposal formsLinks">
+                <div className="container">
+                    <div className="links">
+                        <button onClick={showModal} className="textButton">
+                        {t.applyForCooperation}
+                        </button>
+                    </div>
+                </div>
             </section>
             </>
     );
