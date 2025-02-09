@@ -30,7 +30,7 @@ const Services = ({ services, service, categories }) => {
                   </div>
               </div>
           </section>
-          {/* <Articles articles={services} path="services" /> */}
+          <Articles articles={services} path="services" />
       </Layout>
   );
 };
