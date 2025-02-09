@@ -4,11 +4,11 @@ import Image from "./image";
 
 const Card = ({ article, path='projects' }) => {
 
-    const firstImgEl = article.image1 ? article.image1 : article.contentBlock ? article.contentBlock.find(item => {
+    const firstImgEl = article.image1 ? article.image1 : article.contentBlock && article.contentBlock.find(item => {
         if(item.image){
             return item
         }
-    }): null
+    })
     const firstTxtEl = article?.mainText?.about || article.contentBlock.find(item => {
         if(item.about){
             return item
