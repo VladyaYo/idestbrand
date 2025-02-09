@@ -2,14 +2,14 @@ import React from "react";
 import Link from "next/link";
 import Image from "./image";
 
-const Card = ({ article }) => {
+const Card = ({ article, path='projects' }) => {
 
-    const firstImgEl = article.contentBlock.find(item => {
+    const firstImgEl = article.image1 || article.contentBlock.find(item => {
         if(item.image){
             return item
         }
     })
-    const firstTxtEl = article.contentBlock.find(item => {
+    const firstTxtEl = article?.mainText?.about || article.contentBlock.find(item => {
         if(item.about){
             return item
         }
@@ -17,7 +17,7 @@ const Card = ({ article }) => {
     })
 
   return (
-    <Link href={`/projects/${article.slug}`}>
+    <Link href={`/${path}/${article.slug}`}>
       <a className="card">
           <div className="top">
             {firstImgEl ? <Image image={firstImgEl?.image} /> :''}

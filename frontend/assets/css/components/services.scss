@@ -1,0 +1,124 @@
+.darkBlock{
+    min-height: 70px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .apply{
+        background-color: transparent;
+        border: none;
+        font-family: $inter;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        border-bottom: 1px solid $black;
+        padding: 16px 5px 7px 22px;
+        position: relative;
+        color: #fff;
+
+        &:before{
+          transition: .3s ease all;
+          position: absolute;
+          left: 5px;
+          content: url("data:image/svg+xml,%3Csvg width='8' height='13' viewBox='0 0 8 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.09128 6.5L0 1.44422L1.45436 0L8 6.5L1.45436 13L0 11.5558L5.09128 6.5Z' fill='white'/%3E%3C/svg%3E ");
+        }
+         &:hover{
+          cursor: pointer;
+          &:before{
+            transform: rotate(180deg);
+          }
+       }
+    }
+}
+.servicePage{
+    .vacanciesCards{
+        margin: 50px auto 80px;
+        @include respond-to($phone){
+          margin: 20px auto 40px;
+        }
+        .container{
+          //@include flex($row,$btwen,$start);
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: 1fr;
+          grid-column-gap: 30px;
+          grid-row-gap: 30px;
+          @include respond-to($tablet-portrait){
+            grid-template-columns: repeat(2, 1fr);
+          }
+          @include respond-to($phone){
+            grid-template-columns: repeat(1, 1fr);
+            grid-row-gap: 15px;
+          }
+        }
+        .cardVacancies{
+          border: 1px solid $black;
+          padding: 24px;
+          max-width: 370px;
+          min-height: 360px;
+          margin-bottom: 20px;
+          @include respond-to($phone){
+            max-width: 100%;
+            min-height: auto;
+          }
+          .top{
+            .desc{
+              @include flex($row,$start,$center);
+              p{
+                @extend %caption;
+                color: $dark-gray;
+                &.location{
+                  position: relative;
+                  margin: 0 17px 0 25px;
+                  &:before{
+                    content: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 15.3337L1.75734 11.0379C0.918228 10.1882 0.346791 9.10575 0.115286 7.9273C-0.11622 6.74884 0.00260456 5.52734 0.456732 4.41725C0.91086 3.30717 1.6799 2.35837 2.66659 1.69083C3.65328 1.02329 4.81332 0.666992 6 0.666992C7.18669 0.666992 8.34672 1.02329 9.33342 1.69083C10.3201 2.35837 11.0891 3.30717 11.5433 4.41725C11.9974 5.52734 12.1162 6.74884 11.8847 7.9273C11.6532 9.10575 11.0818 10.1882 10.2427 11.0379L6 15.3337ZM9.3 10.0834C9.9526 9.42256 10.397 8.58062 10.577 7.66406C10.7571 6.74749 10.6646 5.79745 10.3114 4.93408C9.95817 4.07071 9.36003 3.33278 8.59261 2.8136C7.82519 2.29442 6.92296 2.01731 6 2.01731C5.07704 2.01731 4.17481 2.29442 3.40739 2.8136C2.63997 3.33278 2.04183 4.07071 1.68861 4.93408C1.33539 5.79745 1.24294 6.74749 1.42297 7.66406C1.603 8.58062 2.04741 9.42256 2.7 10.0834L6 13.4247L9.3 10.0834ZM6 8.0921C5.64638 8.0921 5.30724 7.94987 5.05719 7.69669C4.80715 7.44351 4.66667 7.10012 4.66667 6.74207C4.66667 6.38402 4.80715 6.04064 5.05719 5.78746C5.30724 5.53428 5.64638 5.39204 6 5.39204C6.35362 5.39204 6.69276 5.53428 6.94281 5.78746C7.19286 6.04064 7.33334 6.38402 7.33334 6.74207C7.33334 7.10012 7.19286 7.44351 6.94281 7.69669C6.69276 7.94987 6.35362 8.0921 6 8.0921Z' fill='%239E9E9E'/%3E%3C/svg%3E%0A");
+                    position: absolute;
+                    left: -25px;
+                  }
+                }
+              }
+            }
+          }
+          .text{
+            margin: 20px 0;
+            min-height: 236px;
+            @include respond-to($tablet-portrait){
+              min-height: 50px;
+            }
+            p{
+              font-family: $noto;
+              font-style: normal;
+              font-weight: 300;
+              font-size: 16px;
+              line-height: 24px;
+            }
+            ul{
+              margin: 12px 0 22px;
+              li{
+                font-family: $noto;
+                font-style: normal;
+                font-weight: 300;
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 8px;
+                margin-left: 15px;
+                &:before{
+                  content: '•';
+                  left: -10px;
+                  position: relative;
+                }
+              }
+            }
+          }
+          .apply{
+           display: none;
+          }
+        }
+      }
+      .ant-pagination{
+        display: none;
+      }
+}

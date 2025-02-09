@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_tables",
+  "info": {
+    "name": "table",
+    "icon": "border-all"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "core": {
+      "type": "string"
+    },
+    "pro": {
+      "type": "string"
+    },
+    "premium": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_sections_workers",
+  "info": {
+    "name": "workers",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "card": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.card-vacancies"
+    }
+  }
+}

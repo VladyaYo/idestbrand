@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_sections_text_lists",
+  "info": {
+    "name": "TextList",
+    "icon": "angle-double-down"
+  },
+  "options": {},
+  "attributes": {
+    "Item": {
+      "type": "text"
+    }
+  }
+}

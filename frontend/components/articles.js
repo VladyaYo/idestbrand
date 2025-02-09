@@ -1,7 +1,7 @@
 import React from "react";
 import Card from "./card";
 
-const Articles = ({ articles, count }) => {
+const Articles = ({ articles, count, path }) => {
   return (
       <section className="projects">
           <div className="container">
@@ -11,6 +11,7 @@ const Articles = ({ articles, count }) => {
                       }
                       return(
                           <Card
+                              path={path}
                               article={article}
                               key={article.id}
                           />

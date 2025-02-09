@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_split_texts",
+  "info": {
+    "name": "SplitText",
+    "icon": "book-open"
+  },
+  "options": {},
+  "attributes": {
+    "about": {
+      "type": "richtext"
+    },
+    "TextList": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.text-list"
+    }
+  }
+}
