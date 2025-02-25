@@ -86,15 +86,6 @@
       },
       "component": "sections.markdown-columns"
     },
-    "slug": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
     "columnsBlock": {
       "type": "component",
       "repeatable": false,
@@ -134,6 +125,23 @@
         }
       },
       "component": "sections.table"
+    },
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "slug": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }
