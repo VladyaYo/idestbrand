@@ -6,6 +6,7 @@ import { getStrapiMedia } from "../lib/media";
 import { fetchAPI } from "../lib/api";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GTM from "../components/gtm"
 
 
 
@@ -17,7 +18,9 @@ const MyApp = ({ Component, pageProps }) => {
 
   return (
     <>
+      <GTM/>
       <Head>
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KWR4KXG2"height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
         <link
           rel="shortcut icon"
           href={getStrapiMedia(global.favicon)}
