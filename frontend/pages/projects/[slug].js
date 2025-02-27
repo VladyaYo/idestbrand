@@ -14,7 +14,6 @@ import {useRouter} from "next/router";
 import ru from "../../public/locales/ru";
 import ua from "../../public/locales/ua";
 import en from "../../public/locales/en";
-import React from "react";
 import TagManager from "react-gtm-module";
 
 
