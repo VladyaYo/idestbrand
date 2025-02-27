@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component, useEffect, useState } from "react";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
@@ -20,9 +20,14 @@ import ru from "../../public/locales/ru";
 import ua from "../../public/locales/ua";
 import en from "../../public/locales/en";
 import DarkBlock from "../../components/darkBlock";
+import TagManager from "react-gtm-module";
 
 
 const Service = ({ service, seo, services, categories }) => {
+
+    useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KWR4KXG2' });
+  }, []);
 
   const router = useRouter();
   const {locale} = router;

@@ -1,20 +1,15 @@
-import React from "react";
-import classnames from "classnames"
-import Text from "../components/text";
+import React, { useEffect } from "react";
 import Articles from "../components/articles";
 import Columns from "../components/columns";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
-import Hero from "../components/hero";
-import FullScreenVideo from "../components/fullScreenVideo";
-import {getStrapiMedia} from "../lib/media";
-import FullScreenImage from "../components/fullscreenImage";
-import NumericText from "../components/numericText";
-import MoreProjects from "../components/moreProjects";
-import Footer from "../components/footer";
+import TagManager from "react-gtm-module";
 
 const Projects = ({ allProjects, projects, categories }) => {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KWR4KXG2' });
+  }, []);
     const seo = {
         metaTitle: allProjects.heading,
         metaDescription: allProjects.about,

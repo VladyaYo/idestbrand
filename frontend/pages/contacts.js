@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
+import TagManager from "react-gtm-module";
 
 const Contacts = ({ contacts, homepage }) => {
+  
+    useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KWR4KXG2' });
+  }, []);
   return (
     <Layout pageClass="contactsPage">
       <Seo seo={homepage.seo} />

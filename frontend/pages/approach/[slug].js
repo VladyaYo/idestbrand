@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { fetchAPI } from "../../lib/api";
 import { EmailShareButton, FacebookShareButton } from "react-share";
 import Layout from "../../components/layout";
@@ -11,8 +11,14 @@ import ContainerVideo from "../../components/containerVideo";
 import ContainerImage from "../../components/containerImage";
 import Breadcrumbs from "../../components/breadcrumbs";
 import MoreProjects from "../../components/moreProjects";
+import TagManager from 'react-gtm-module';
 
 const Approach = ({ approach, approaches }) => {
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KWR4KXG2' });
+  }, []);
+
   const seo = {
     metaTitle: approach.name,
     metaDescription: approach.Hero.title,

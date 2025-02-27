@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import { fetchAPI } from "../../lib/api";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
@@ -14,9 +14,15 @@ import {useRouter} from "next/router";
 import ru from "../../public/locales/ru";
 import ua from "../../public/locales/ua";
 import en from "../../public/locales/en";
+import React from "react";
+import TagManager from "react-gtm-module";
 
 
 const Project = ({ project, seo, projects }) => {
+
+    useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KWR4KXG2' });
+  }, []);
 
   const router = useRouter();
   const {locale} = router;

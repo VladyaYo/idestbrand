@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import {fetchAPI} from "../lib/api";
@@ -10,9 +10,12 @@ import { toast } from 'react-toastify';
 import ru from "../public/locales/ru";
 import ua from "../public/locales/ua";
 import en from "../public/locales/en";
+import TagManager from "react-gtm-module";
 
 const Vacancies = ({ vacancies, homepage}) => {
-
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KWR4KXG2' });
+  }, []);
     const router = useRouter();
     const {locale} = router;
     let t ;

@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { fetchAPI } from "../lib/api";
 import ApproachesCard from "../components/approachCard";
+import TagManager from "react-gtm-module";
 
 const Approach = ({ allApproach, categories, approach }) => {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KWR4KXG2' });
+  }, []);
+  
   const seo = {
     metaTitle: allApproach.mainHeading,
     metaDescription: allApproach.mainText,

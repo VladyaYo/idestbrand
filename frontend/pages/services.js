@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Text from "../components/text";
 import Articles from "../components/articles";
 import Columns from "../components/columns";
@@ -12,8 +12,13 @@ import ru from "../public/locales/ru";
 import ua from "../public/locales/ua";
 import en from "../public/locales/en";
 import RichColumns from "../components/richColumns";
+import TagManager from "react-gtm-module";
 
 const Services = ({ services, service, categories }) => {
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'GTM-KWR4KXG2' });
+  }, []);
+
   const seo = {
       metaTitle: services.heading,
       metaDescription: services.about,
