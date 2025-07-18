@@ -1,7 +1,9 @@
 import React from "react";
+import dynamic from 'next/dynamic'
 import { getStrapiMedia } from "../lib/media";
 import useWindowSize from "../utils/useWindowSize";
-import Vimeo from "@u-wave/react-vimeo";
+// import Vimeo from "@u-wave/react-vimeo";
+const Vimeo = dynamic(() => import('@u-wave/react-vimeo'), { ssr: false })
 
 const ContainerVideo = ({ video }) => {
   // const videoUrl = getStrapiMedia(video.video);
